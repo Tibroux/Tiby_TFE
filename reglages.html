@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Réglages</title>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a class="back" href="#">Aujourd'hui</a></li>
+			<li><h1>Réglages</h1></li>
+			<li><input id="OK" name="OK" type="submit" value="OK"/></li>
+		</ul>
+	</header>
+	<div class="content">
+		<form class="synchro" action="post">
+			<fieldset>
+				<legend>Synchronisation</legend>
+				<ol>
+					<li>
+					<label for="ical">iCal</label>
+					<input id="ical" name="ical" type="checkbox"/>
+					</li>
+					<li>
+					<label for="googlecal">Google Calendar</label>
+					<input id="googlecal" name="googlecal" type="checkbox"/>
+					</li>
+					<li>
+					<label for="extranet">Extranet Étudiant</label>
+					<input id="extranet" name="extranet" type="checkbox"/>
+					<ol>
+						<li>
+						<label for="link_extranet">Lien extranet</label>
+						<input id="link_extranet" name="link_extranet" type="text" placeholder="Lien extranet..."/></li>
+					</ol>
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+		<form class="compte" action="post">
+			<fieldset>
+				<legend>Compte</legend>
+				<ol>
+					<li>
+					<label for="username">Nom d'utilisateur</label>
+					<input id="username" name="username" type="text" placeholder="Nom d'utilisateur..."/>
+					</li>
+					<li>
+					<label for="email">E-mail</label>
+					<input id="email" name="email" type="text" placeholder="E-mail..."/>
+					</li>
+					<li>
+					<label for="change_password">Changer de mot de passe</label>
+					<input id="change_password" name="change_password" type="text" placeholder="Changer de mot de passe..."/>
+					</li>
+					<li>
+					<label for="confirm_password">Confirmer le mot de passe</label>
+					<input id="confirm_password" name="confirm_password" type="text" placeholder="Confirmer le mot de passe..."/>
+					</li>
+					<li>
+					<label for="localisation">Localisation</label>
+					<input id="localisation" name="localisation" type="checkbox"/>
+					</li>
+					<li>
+					<label for="notifications">Notifications</label>
+					<input id="notifications" name="notifications" type="checkbox"/>
+					</li>
+				</ol>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
