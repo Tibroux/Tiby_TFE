@@ -62,3 +62,93 @@ li.confirm_btn {
 	color: rgba(18,132,255,1);
 	background-color: #fff;
 }
+ol, ul {
+	list-style: none;
+}
+form {
+	width: 92%;
+	margin: auto;
+	position: relative;
+	left: .35rem;
+	border-radius: 5px;
+	line-height: 1.6;
+}
+form.synchro {
+	border: 2px solid #54c7fc;
+}
+form.compte {
+	border: 2px solid #ff3824;
+	margin-top: 1.6rem;
+}
+fieldset {
+	border: none;
+}
+legend {
+	width: 100%;
+	text-align: left;
+	margin-left: .5rem;
+	padding: .8rem 0 .6rem 0;
+	font-size: 1rem;
+}
+form.synchro fieldset legend {
+	color: #54c7fc;
+}
+form.compte fieldset legend {
+	color: #ff3824;
+}
+form fieldset ol {
+	width: 100%;
+}
+#first_decal_synchro {
+	border-top: 1px solid #54c7fc;
+}
+#first_decal_compte {
+	border-top: 1px solid #ff3824;
+}
+.decal {
+	padding: .8rem 0 0 .8rem;
+}
+#ical, #googlecal, #extranet /*input [type="checkbox"]*/ {
+	border: 1px solid #8e8e93;
+	width: 1rem;
+	height: 1rem;
+	box-shadow: none;
+	/*border-radius: 150px;
+	-webkit-border-radius: 150px;*/
+}
+label {
+	margin-left: 2.5rem;
+	color: #8e8e93;
+}
+.disappear {
+	display: none;
+}
+#link_extranet {
+	margin-left: 3.8rem;
+	margin-top: .5rem;
+	width: 70%;
+	margin-bottom: 1rem;
+	border: 1px solid #54c7fc;
+}
+input:checked ~ label {
+	color: #54c7fc;
+}
+.area {
+	padding: .5rem 0 .5rem .5rem;
+	font-size: .8rem;
+	border: 1px solid #8e8e93;
+	margin-top: .4rem;
+	margin-left: .4rem;
+	width: 88%;
+}
+.simule {
+	margin-top: 1rem;
+	margin-left: 1.2rem;
+}
+#last_compte {
+	margin-top: .5rem;
+	margin-bottom: .8rem;
+}
+li.simule input:checked ~ label {
+	color: #ff3824;
+}
