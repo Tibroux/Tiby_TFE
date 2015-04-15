@@ -28,6 +28,9 @@ header ul {
 header ul li {
 	display: inline-block;
 }
+.content {
+	width: 100%;
+}
 li.back:before {
 	color: rgba(18,132,255,1);
 	content: "<";
@@ -55,12 +58,25 @@ li.confirm_btn {
 	position: relative;
 	left: .35rem;
 }
-#register {
+li#var1 {
+	width: 28.15%;
+}
+#register, #ok {
 	height: 2rem;
 	border: none;
 	font-size: 1.25rem;
 	color: rgba(18,132,255,1);
 	background-color: #fff;
+}
+.logo {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.logo img {
+	margin: 1.25rem auto 1.5rem;
+	width: 100px;
+	height: 100px;
 }
 ol, ul {
 	list-style: none;
@@ -151,4 +167,19 @@ input:checked ~ label {
 }
 li.simule input:checked ~ label {
 	color: #ff3824;
+}
+.moit {
+	width: 49%;
+	display: inline-block;
+	margin-top: 1rem;
+}
+.moit label {
+	margin-left: 0;
+}
+.moit input {
+	
+}
+.moit a {
+	color: #8e8e93;
+	font-size: .8rem;
 }
