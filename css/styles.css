@@ -124,6 +124,11 @@ form fieldset ol {
 .decal {
 	padding: .8rem 0 0 .8rem;
 }
+form.connect fieldset ol li.decal {
+	padding-left: 0;
+	margin-left: -.4rem;
+	width: 105.5%; /*Bizarre ! À revoir*/
+}
 #ical, #googlecal, #extranet /*input [type="checkbox"]*/ {
 	border: 1px solid #8e8e93;
 	width: 1rem;
@@ -182,4 +187,15 @@ li.simule input:checked ~ label {
 .moit a {
 	color: #8e8e93;
 	font-size: .8rem;
+}
+#connexion {
+	border: 1px solid #54c7fc;
+	background-color: #fff;
+	text-align: center;
+	width: 96.5%;
+	font-size: 1rem;
+	color: #54c7fc;
+	padding: .4rem 0;
+	margin-top: 1rem;
+	border-radius: 4px;
 }
