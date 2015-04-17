@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Réglages</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
 </head>
 <body>
 	<header>
 		<ul>
-			<li><a class="back" href="#">Aujourd'hui</a></li>
-			<li><h1>Réglages</h1></li>
-			<li><input id="OK" name="OK" type="submit" value="OK"/></li>
+			<li class="back"><a href="#">Aujourd'hui</a></li>
+			<li><h1 class="space">Réglages</h1></li>
+			<li class="confirm_btn"><input id="ok" name="OK" type="submit" value="OK"/></li>
 		</ul>
 	</header>
 	<div class="content">
@@ -17,21 +18,21 @@
 			<fieldset>
 				<legend>Synchronisation</legend>
 				<ol>
-					<li>
-					<label for="ical">iCal</label>
+					<li id="first_decal_synchro" class="decal">
 					<input id="ical" name="ical" type="checkbox"/>
+					<label for="ical">iCal</label>
 					</li>
-					<li>
-					<label for="googlecal">Google Calendar</label>
+					<li class="decal">
 					<input id="googlecal" name="googlecal" type="checkbox"/>
+					<label for="googlecal">Google Calendar</label>
 					</li>
-					<li>
-					<label for="extranet">Extranet Étudiant</label>
+					<li class="decal">
 					<input id="extranet" name="extranet" type="checkbox"/>
+					<label for="extranet">Extranet Étudiant</label>
 					<ol>
 						<li>
-						<label for="link_extranet">Lien extranet</label>
-						<input id="link_extranet" name="link_extranet" type="text" placeholder="Lien extranet..."/></li>
+						<label class="disappear" for="link_extranet">Lien extranet</label>
+						<input id="link_extranet" class="area" name="link_extranet" type="text" placeholder="Lien extranet..."/></li>
 					</ol>
 					</li>
 				</ol>
@@ -41,29 +42,29 @@
 			<fieldset>
 				<legend>Compte</legend>
 				<ol>
-					<li>
-					<label for="username">Nom d'utilisateur</label>
-					<input id="username" name="username" type="text" placeholder="Nom d'utilisateur..."/>
+					<li id="first_decal_compte" class="decal">
+					<label class="disappear" for="username">Nom d'utilisateur</label>
+					<input id="username" class="area" name="username" type="text" placeholder="Nom d'utilisateur..."/>
 					</li>
-					<li>
-					<label for="email">E-mail</label>
-					<input id="email" name="email" type="text" placeholder="E-mail..."/>
+					<li class="decal">
+					<label class="disappear" for="email">E-mail</label>
+					<input id="email" class="area" name="email" type="text" placeholder="E-mail..."/>
 					</li>
-					<li>
-					<label for="change_password">Changer de mot de passe</label>
-					<input id="change_password" name="change_password" type="text" placeholder="Changer de mot de passe..."/>
+					<li class="decal">
+					<label class="disappear" for="change_password">Changer de mot de passe</label>
+					<input id="change_password" class="area" name="change_password" type="text" placeholder="Changer de mot de passe..."/>
 					</li>
-					<li>
-					<label for="confirm_password">Confirmer le mot de passe</label>
-					<input id="confirm_password" name="confirm_password" type="text" placeholder="Confirmer le mot de passe..."/>
+					<li class="decal">
+					<label class="disappear" for="confirm_password">Confirmer le mot de passe</label>
+					<input id="confirm_password" class="area" name="confirm_password" type="text" placeholder="Confirmer le mot de passe..."/>
 					</li>
-					<li>
-					<label for="localisation">Localisation</label>
+					<li class="simule">
 					<input id="localisation" name="localisation" type="checkbox"/>
+					<label for="localisation">Localisation</label>
 					</li>
-					<li>
-					<label for="notifications">Notifications</label>
+					<li id="last_compte" class="simule">
 					<input id="notifications" name="notifications" type="checkbox"/>
+					<label for="notifications">Notifications</label>
 					</li>
 				</ol>
 			</fieldset>

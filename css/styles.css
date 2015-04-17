@@ -12,7 +12,7 @@ body {
 	font-weight: 100;
 	font-size: 16px;
 	max-width: 320px;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 header {
 	margin-top: 1.5rem;
@@ -51,6 +51,9 @@ h1 {
 	font-weight: 500;
 	position: relative;
 	left: 0rem;
+}
+h1.space {
+	left: .4rem;
 }
 li.confirm_btn {
 	width: 33%;
@@ -95,6 +98,7 @@ form.synchro {
 form.compte {
 	border: 2px solid #ff3824;
 	margin-top: 1.6rem;
+	margin-bottom: 1.6rem;
 }
 fieldset {
 	border: none;
@@ -180,9 +184,6 @@ li.simule input:checked ~ label {
 }
 .moit label {
 	margin-left: 0;
-}
-.moit input {
-	
 }
 .moit a {
 	color: #8e8e93;
