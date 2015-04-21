@@ -17,6 +17,7 @@ body {
 header {
 	margin-top: 1.5rem;
 	width: 100%;
+	background-color: #f8f9f9;
 }
 header ul {
 	width: 320px;
@@ -24,6 +25,9 @@ header ul {
 	padding-right: .7rem;
 	padding-bottom: .7rem;
 	margin-bottom: 1.4rem;
+}
+.exception {
+	margin-bottom: 0;
 }
 header ul li {
 	display: inline-block;
@@ -71,7 +75,7 @@ li.confirm_btn, li.more {
 }
 li.more a {
 	text-decoration: none;
-	font-size: 1.25rem;
+	font-size: 1.8rem;
 	color: rgba(18,132,255,1);
 }
 li#var1 {
@@ -97,9 +101,25 @@ li#var1 {
 ol, ul {
 	list-style: none;
 }
+ul.champs {
+	background-color: #f8f9f9;
+}
+li.section_search {
+	border-radius: 5px;
+	width: 92%;
+	margin: .8rem .05rem .05rem .8rem;
+	height: 1.6rem;
+	background-color: #fff;
+	padding: .3rem 0;
+}
 .search_logo {
-	width: 25px;
-	height: 25px;
+	width: 18px;
+	height: 18px;
+}
+#search {
+	outline: none;
+	border: none;
+	font-size: 1rem;
 }
 ul.past_day {
 	border: 1px solid #8e8e93;
@@ -114,7 +134,7 @@ ul.past_day li {
 ul.past_day li h3 {
 	font-weight: 100;
 }
-form {
+form, .active_day {
 	width: 92%;
 	margin: auto;
 	position: relative;
@@ -122,8 +142,11 @@ form {
 	border-radius: 5px;
 	line-height: 1.6;
 }
-form.synchro {
+form.synchro, .active_day {
 	border: 2px solid #54c7fc;
+}
+.active_day {
+	left: 0;
 }
 form.compte {
 	border: 2px solid #ff3824;
@@ -133,14 +156,18 @@ form.compte {
 fieldset {
 	border: none;
 }
-legend {
+legend, .active_day li h3.date {
 	width: 100%;
 	text-align: left;
 	margin-left: .5rem;
 	padding: .8rem 0 .6rem 0;
 	font-size: 1rem;
 }
-form.synchro fieldset legend {
+.active_day li h3.date {
+	font-weight: 100;
+	font-size: 1.15rem;
+}
+form.synchro fieldset legend, .active_day li h3.date {
 	color: #54c7fc;
 }
 form.compte fieldset legend {
@@ -149,7 +176,7 @@ form.compte fieldset legend {
 form fieldset ol {
 	width: 100%;
 }
-#first_decal_synchro {
+#first_decal_synchro, .active_day li table.planning {
 	border-top: 1px solid #54c7fc;
 }
 #first_decal_compte {
