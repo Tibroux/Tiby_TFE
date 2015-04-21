@@ -52,14 +52,27 @@ h1 {
 	position: relative;
 	left: 0rem;
 }
+h1 a {
+	font-size: 1.25rem;
+	font-weight: 500;
+	position: relative;
+	left: 0rem;
+	text-decoration: none;
+	color: #ff3824;
+}
 h1.space {
 	left: .4rem;
 }
-li.confirm_btn {
+li.confirm_btn, li.more {
 	width: 33%;
 	text-align: right;
 	position: relative;
 	left: .35rem;
+}
+li.more a {
+	text-decoration: none;
+	font-size: 1.25rem;
+	color: rgba(18,132,255,1);
 }
 li#var1 {
 	width: 28.15%;
@@ -83,6 +96,23 @@ li#var1 {
 }
 ol, ul {
 	list-style: none;
+}
+.search_logo {
+	width: 25px;
+	height: 25px;
+}
+ul.past_day {
+	border: 1px solid #8e8e93;
+	border-radius: 5px;
+	color: #8e8e93;
+	width: 92%;
+	margin: 1rem auto;
+}
+ul.past_day li {
+	padding: 1rem .4rem;
+}
+ul.past_day li h3 {
+	font-weight: 100;
 }
 form {
 	width: 92%;
