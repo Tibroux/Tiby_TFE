@@ -16,7 +16,6 @@ body {
 	overflow-x: hidden;
 }
 header {
-	margin-top: 1.4rem;
 	width: 100%;
 	background-color: #f8f9f9;
 }
@@ -34,7 +33,7 @@ header ul {
 }
 header ul li {
 	display: inline-block;
-	width: 32.8%;
+	width: 32.5%;
 	text-align: center;
 }
 .content {
@@ -72,16 +71,19 @@ h1 a {
 h1.space {
 	/*left: .4rem;*/
 }
-li.confirm_btn, li.more {
+li.confirm_btn, li.more, li.today {
 	/*width: 33%;*/
 	text-align: right;
 	/*position: relative;
 	left: .35rem;*/
 }
-li.more a {
+li.more a, li.today a {
 	text-decoration: none;
 	font-size: 1.8rem;
 	color: rgba(18,132,255,1);
+}
+li.today a {
+	font-size: 1.15rem;
 }
 li#var1 {
 	/*width: 28.15%;*/
@@ -113,7 +115,7 @@ ul.champs {
 li.section_search {
 	border-radius: 5px;
 	display: block;
-	width: 97.5%;
+	width: 288px;
 	margin: .8rem auto 0;
 	height: 1.6rem;
 	background-color: #fff;
@@ -129,11 +131,14 @@ li.section_search {
 	border: none;
 	font-size: 1rem;
 	position: relative;
-	top: -.2rem;
-	width: 97.5%;
+	top: -.15rem;
+	width: 90%;
+}
+.two_elem {
+	margin-left: 33%;
 }
 ul.past_day {
-	border: 1px solid #8e8e93;
+	border: 2px solid #8e8e93;
 	border-radius: 5px;
 	color: #8e8e93;
 	width: 97%;
@@ -167,12 +172,57 @@ form.compte {
 fieldset {
 	border: none;
 }
-legend, .active_day li h3.date {
+header.phone {
+	margin-top: 1.4rem;
+}
+.phone {
+	width: 320px;
+	margin: 0 auto;
+}
+legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
 	width: 100%;
 	text-align: left;
 	margin-left: .5rem;
 	padding: .8rem 0 .6rem 0;
 	font-size: 1rem;
+}
+.mars2015, .avril2015 {
+	border: 2px solid #54c7fc;
+	border-radius: 5px;
+	width: 90%;
+	margin: auto;
+}
+.avril2015 {
+	border-color: rgba(18,132,255,1);
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+}
+h4 {
+	font-weight: 100;
+}
+.mars2015 h4 {
+	color: #54c7fc;
+}
+.avril2015 h4 {
+	color: rgba(18,132,255,1);
+}
+.mars2015 table, .avril2015 table {
+	width: 92%;
+	display: inline-block;
+	text-align: center;
+	border-top: 1px solid #54c7fc;
+	padding-top: .5rem;
+	padding-left: .75rem;
+	padding-right: .75rem;
+}
+.mars2015 table tr th, .avril2015 table tr th {
+	width: 14%;
+}
+.avril2015 table {
+	border-color: rgba(18,132,255,1);
+}
+.mars2015 table tr th, .avril2015 table tr th {
+	font-weight: 400;
 }
 .active_day li h3.date {
 	font-weight: 100;
@@ -192,9 +242,10 @@ form fieldset ol {
 	width: 100.2%;
 }
 table tr td{
-	display: inline-block;
-	width: 30.8%;
-	margin: 0 .9%;
+	/*display: inline-block;*/
+	/*width: 15.45%;*/
+	width: 35px;
+	height: 35px;
 }
 td.tab_left {
 	border-right: 1px solid #54c7fc;
@@ -254,10 +305,33 @@ td.todo_right {
 	border-bottom: none;
 }
 ul.back_to_the_future {
-	border: 1px solid rgba(18,132,255,1);
+	border: 2px solid rgba(18,132,255,1);
 	border-radius: 5px;
 	width: 97.5%;
 	margin: 1rem auto;
+}
+.back_to_the_future table.todo, .back_to_the_future table.planning {
+	border-top: 1px solid rgba(18,132,255,1);
+}
+.back_to_the_future li h3.date {
+	color: rgba(18,132,255,1);
+	font-size: 1.15rem;
+	font-weight: 100;
+}
+.back_to_the_future table.todo {
+	margin-top: .4rem;
+}
+.back_to_the_future table.planning {
+	width: 100%;
+	color: rgba(18,132,255,1);
+	margin-top: .4rem;
+	padding-bottom: 1rem;
+}
+.back_to_the_future table.todo tr td {
+	border-bottom: none;
+}
+.back_to_the_future table.planning tr td {
+	margin-top: 1rem;
 }
 #first_decal_compte {
 	border-top: 1px solid #ff3824;
@@ -336,4 +410,21 @@ li.simule input:checked ~ label {
 	padding: .4rem 0;
 	margin-top: 1rem;
 	border-radius: 4px;
+}
+a.more {
+	display: block;
+	position: fixed;
+	right: 30.85rem;
+	bottom: 1rem;
+	border: 1px solid #44db5e;
+	border-radius: 50px;
+	width: 34px;
+	height: 34px;
+	text-align: center;
+	line-height: 1.1;
+	font-size: 1.7rem;
+	background-color: #fff;
+	text-decoration: none;
+	color: #44db5e;
+	box-shadow: 1px 1px 5px #b2b2b2;
 }
