@@ -1,3 +1,32 @@
+<?php
+
+function is_valid_email($email) {
+	return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+//form processing
+if($_POST) {
+	// nettoyage
+	$nom = strip_tags(trim($_POST['nom']));
+	$email = strip_tags(trim($_POST['email']));
+	$message = strip_tags(trim($_POST['message']));
+	
+	if(is_valid_email($email) == false) {
+		echo '*Indique ton email stp.';
+	}
+	
+	if($message == '') {
+		echo "*Et t'écris rien ?";
+	}
+	else {
+	//ici l'envoi d'email
+	// on termine
+	echo 'Email envoyé, en te remerciant.';
+	}
+}
+
+
+?>
 <!doctype html>
 <html>
 <head>
