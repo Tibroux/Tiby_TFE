@@ -39,6 +39,13 @@ header ul li {
 .content {
 	width: 100%;
 }
+header.phone {
+	margin-top: 1.4rem;
+}
+.phone {
+	width: 320px;
+	margin: 0 auto;
+}
 li.back:before {
 	color: rgba(18,132,255,1);
 	content: "<";
@@ -57,6 +64,7 @@ li.back a {
 h1 {
 	font-size: 1.25rem;
 	font-weight: 500;
+	text-align: left;
 	/*position: relative;
 	left: 0rem;*/
 }
@@ -72,10 +80,10 @@ h1.space {
 	/*left: .4rem;*/
 }
 li.confirm_btn, li.more, li.today {
-	/*width: 33%;*/
+	width: 30%;
 	text-align: right;
-	/*position: relative;
-	left: .35rem;*/
+	position: relative;
+	right: .3rem;
 }
 li.more a, li.today a {
 	text-decoration: none;
@@ -93,7 +101,7 @@ li#var1 {
 	border: none;
 	font-size: 1.25rem;
 	color: rgba(18,132,255,1);
-	background-color: #fff;
+	background-color: #f8f9f9;
 }
 .logo {
 	display: inline-block;
@@ -152,11 +160,11 @@ ul.past_day li h3 {
 }
 form, .active_day {
 	width: 97%;
-	margin: auto;
+	text-align: left;
 	/*position: relative;
 	left: .35rem;*/
-	border-radius: 5px;
 	line-height: 1.6;
+	border-radius: 5px;
 }
 form.synchro, .active_day {
 	border: 2px solid #54c7fc;
@@ -172,15 +180,8 @@ form.compte {
 fieldset {
 	border: none;
 }
-header.phone {
-	margin-top: 1.4rem;
-}
-.phone {
-	width: 320px;
-	margin: 0 auto;
-}
 legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
-	width: 100%;
+	width: 97%;
 	text-align: left;
 	margin-left: .5rem;
 	padding: .8rem 0 .6rem 0;
@@ -239,7 +240,7 @@ form fieldset ol {
 }
 #first_decal_synchro, .active_day li table.planning {
 	border-top: 1px solid #54c7fc;
-	width: 100.2%;
+	width: 96.5%;
 }
 table tr td{
 	/*display: inline-block;*/
@@ -389,9 +390,10 @@ li.simule input:checked ~ label {
 	color: #ff3824;
 }
 .moit {
-	width: 49%;
+	width: 48%;
 	display: inline-block;
 	margin-top: 1rem;
+	margin-left: .2rem;
 }
 .moit label {
 	margin-left: 0;
@@ -409,22 +411,26 @@ li.simule input:checked ~ label {
 	color: #54c7fc;
 	padding: .4rem 0;
 	margin-top: 1rem;
-	border-radius: 4px;
+	margin-left: .6rem;
+	border-radius: 5px;
 }
 a.more {
 	display: block;
 	position: fixed;
 	right: 30.85rem;
 	bottom: 1rem;
-	border: 1px solid #44db5e;
+	/*border: 1px solid #44db5e;*/
+	border: none;
 	border-radius: 50px;
 	width: 34px;
 	height: 34px;
 	text-align: center;
 	line-height: 1.1;
 	font-size: 1.7rem;
-	background-color: #fff;
+	/*background-color: #fff;*/
+	background-color: #44db5e;
 	text-decoration: none;
-	color: #44db5e;
+	/*color: #44db5e;*/
+	color: #fff;
 	box-shadow: 1px 1px 5px #b2b2b2;
 }
