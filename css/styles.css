@@ -45,6 +45,7 @@ header.phone {
 .phone {
 	width: 320px;
 	margin: 0 auto;
+	/*background: red;*/
 }
 li.back:before {
 	color: rgba(18,132,255,1);
@@ -165,6 +166,7 @@ form, .active_day {
 	left: .35rem;*/
 	line-height: 1.6;
 	border-radius: 5px;
+	margin: 0 auto;
 }
 form.synchro, .active_day {
 	border: 2px solid #54c7fc;
