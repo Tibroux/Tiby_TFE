@@ -308,8 +308,9 @@ td.tab_right_split {
 }
 .more ul li input.add {
 	width: 70%;
+	margin-top: .35rem;
 }
-.more ul li input#ok {
+.more ul li input.ok {
 	color: #54c7fc;
 	background-color: #fff;
 	font-size: 1rem;
@@ -322,28 +323,35 @@ ul.back_to_the_future {
 	width: 97.5%;
 	margin: 1rem auto;
 }
-.back_to_the_future table.todo, .back_to_the_future table.planning {
+.back_to_the_future .todo, .back_to_the_future .planning {
 	border-top: 1px solid rgba(18,132,255,1);
+	border-bottom: none;
+	margin-top: .4rem;
 }
 .back_to_the_future li h3.date {
 	color: rgba(18,132,255,1);
 	font-size: 1.15rem;
 	font-weight: 100;
 }
-.back_to_the_future table.todo {
-	margin-top: .4rem;
-}
 .back_to_the_future table.planning {
 	width: 100%;
 	color: rgba(18,132,255,1);
 	margin-top: .4rem;
-	padding-bottom: 1rem;
-}
-.back_to_the_future table.todo tr td {
-	border-bottom: none;
+	padding-top: .5rem;
+	padding-bottom: 0;
 }
 .back_to_the_future table.planning tr td {
 	margin-top: 1rem;
+	border-right: 1px solid;
+}
+.back_to_the_future table.planning tr td.tab_right {
+	border: none;
+}
+.back_to_the_future .todo ul.future_adjust {
+	padding-top: .3rem;
+}
+.back_to_the_future li .todo .more ul li .ok {
+	color: rgba(18,132,255,1);
 }
 #first_decal_compte {
 	border-top: 1px solid #ff3824;

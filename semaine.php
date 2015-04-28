@@ -41,7 +41,7 @@
 		</ul>
 		<ul class="active_day">
 			<li>
-				<h3 class="date"><?php echo $timestamp;?></h3>
+				<h3 class="date">Mercredi 18 mars 2015</h3>
 			</li>
 			<li>
 				<table class="planning">
@@ -74,7 +74,7 @@
 					</ul>
 					<form class="more">
 						<ul>
-							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input id="ok" type="submit" value="OK"/></li>
+							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
 						</ul>
 					</form>
 				</div>
@@ -90,12 +90,12 @@
 			</li>
 			<li>
 			<div class="todo">
-					<ul>
+					<ul class="future_adjust">
 						<li><input type="checkbox"/><input class="todo_right" type="text" value="Préparer les funérailles"/></li>
 					</ul>
 					<form class="more">
 						<ul>
-							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input id="ok" type="submit" value="OK"/></li>
+							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
 						</ul>
 					</form>
 				</div>
@@ -110,7 +110,7 @@
 					<tr>
 						<td>10:00</td>
 						<td>Enterrement</td>
-						<td>Cimetière</td>
+						<td class="tab_right">Cimetière</td>
 					</tr>
 				</table>
 			</li>
@@ -120,7 +120,7 @@
 					</ul>
 					<form class="more">
 						<ul>
-							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input id="ok" type="submit" value="OK"/></li>
+							<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
 						</ul>
 					</form>
 				</div>
