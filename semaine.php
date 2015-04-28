@@ -41,7 +41,7 @@
 		</ul>
 		<ul class="active_day">
 			<li>
-				<h3 class="date">Mercredi 18 mars 2015</h3>
+				<h3 class="date"><?php echo $timestamp;?></h3>
 			</li>
 			<li>
 				<table class="planning">

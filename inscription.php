@@ -77,7 +77,7 @@ if($_POST) {
 				</ol>
 			</fieldset>
 		</form>
-		<form class="compte" method="post">
+		<form class="compte" method="post" action="semaine.php">
 			<fieldset>
 				<legend>Compte</legend>
 				<ol>

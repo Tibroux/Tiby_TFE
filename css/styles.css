@@ -31,6 +31,9 @@ header ul {
 .exception {
 	margin-bottom: 0;
 }
+.exception li h1 {
+	text-align: center;
+}
 header ul li {
 	display: inline-block;
 	width: 32.5%;
@@ -242,7 +245,7 @@ form fieldset ol {
 }
 #first_decal_synchro, .active_day li table.planning {
 	border-top: 1px solid #54c7fc;
-	width: 96.5%;
+	width: 100%;
 }
 table tr td{
 	/*display: inline-block;*/
@@ -252,6 +255,7 @@ table tr td{
 }
 td.tab_left {
 	border-right: 1px solid #54c7fc;
+	text-align: center;
 }
 td.tab_right {
 	border-left: 1px solid #54c7fc;
@@ -275,6 +279,7 @@ td.tab_left_split {
 	border-right: 1px solid #54c7fc;
 	border-bottom: 1px solid #8e8e93;
 	color: #8e8e93;
+	text-align: center;
 }
 td.tab_right_split {
 	height: 1.6rem;
@@ -282,30 +287,34 @@ td.tab_right_split {
 	border-bottom: 1px solid #8e8e93;
 	padding-right: 1.5rem;
 }
-table.todo {
-	margin: 1.4rem auto 0;
+.todo {
 	width: 100%;
 }
-table.todo tr td {
+.todo ul li {
 	border-bottom: 1px solid #8e8e93;
 	height: 2.2rem;
 	padding-top: .6rem;
 }
-table.todo tr td input[type="text"] {
+.todo ul li input {
 	border: none;
 	color: #8e8e93;
 	font-size: .95rem;
-	width: 100%;
 	outline: none;
+	margin-left: 1rem;
 }
-/*input[type="checkbox"]:checked ~ input[type="text"] {
-	text-decoration: line-through;
-}*/
-td.todo_right {
-	padding-right: 1.7rem;
+.more ul li {
+	border: none;
+	padding-bottom: .3rem;
 }
-#last_c1, #last_c2, #last_c3 {
-	border-bottom: none;
+.more ul li input.add {
+	width: 70%;
+}
+.more ul li input#ok {
+	color: #54c7fc;
+	background-color: #fff;
+	font-size: 1rem;
+	text-align: right;
+	width: 3rem;
 }
 ul.back_to_the_future {
 	border: 2px solid rgba(18,132,255,1);
