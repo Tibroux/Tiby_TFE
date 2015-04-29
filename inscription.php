@@ -7,8 +7,8 @@ function is_valid_email($email) {
 
 $errors="";
 
-$password = strip_tags(trim($_POST['password']));
-md5($password);
+/*$password = strip_tags(trim($_POST['password']));
+md5($password);*/
 
 //form processing
 if($_POST) {
@@ -67,7 +67,7 @@ if($_POST) {
 	</header>
 	<div class="content">
 		<div class="phone">
-			<!--<form class="synchro" method="post">
+			<form class="synchro" method="post">
 			<fieldset>
 				<legend>Synchronisation</legend>
 				<ol>
@@ -90,7 +90,7 @@ if($_POST) {
 					</li>
 				</ol>
 			</fieldset>
-		</form>-->
+		</form>
 		<form class="compte" method="post" action="">
 			<fieldset>
 				<legend>Compte</legend>

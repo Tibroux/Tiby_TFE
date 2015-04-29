@@ -37,7 +37,7 @@ header ul {
 	border-bottom: 1px solid #b2b2b2;
 	/*padding-right: .7rem;*/
 	padding-bottom: .7rem;
-	margin-bottom: 1.4rem;
+	/*margin-bottom: 1.4rem;*/
 }
 .exception {
 	margin-bottom: 0;
@@ -60,6 +60,11 @@ header.phone {
 	width: 320px;
 	margin: 0 auto;
 	/*background: red;*/
+}
+div.phone {
+	height: 472px;
+	overflow-y: scroll;
+	padding-top: 1.4rem;
 }
 input {
 	outline: none;
@@ -257,7 +262,11 @@ form.compte fieldset legend {
 form fieldset ol {
 	width: 100%;
 }
-#first_decal_synchro, .active_day li table.planning {
+#first_decal_synchro {
+	border-top: 1px solid #54c7fc;
+	width: 96%;
+}
+.active_day li table.planning {
 	border-top: 1px solid #54c7fc;
 	width: 100%;
 }
