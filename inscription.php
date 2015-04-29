@@ -5,6 +5,11 @@ function is_valid_email($email) {
 	return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
+$errors="";
+
+$password = strip_tags(trim($_POST['password']));
+md5($password);
+
 //form processing
 if($_POST) {
 	// nettoyage
@@ -15,36 +20,37 @@ if($_POST) {
 	$confirm_email = strip_tags(trim($_POST['confirm_email']));
 	
 	if($username == '') {
-		echo "*Nom d'utilisateur";
+		$errors = "username";
 	}
 	if($password == '') {
-		echo "*Mot de passe";
+		$errors = "password";
 	}
 	if(is_valid_email($email) == false) {
-		echo '*Email';
+		$errors = "email";
 	}
-	if(is_valid_email($confirm_email) == false) {
-		echo '*Confirmation de votre email';
+	if($email != $confirm_email) {
+		$errors = "confirm email";
 	}
-	else {
-	//ici l'envoi d'email
-	// on termine
-	echo 'Merci de votre inscription.';
+	
+	if($errors == "")
+	{
+		$query = 'INSERT INTO users(username,password,school,email,confirm_email) VALUES(:username, :password, :school, :email, :confirm_email);';
+			$preparedStatement = $dbh->prepare($query);
+			$preparedStatement->bindParam(":username", $username);
+			$preparedStatement->bindParam(":password", $password);
+			$preparedStatement->bindParam(":school", $school);
+			$preparedStatement->bindParam(":email", $email);
+			$preparedStatement->bindParam(":confirm_email", $confirm_email);
+			$preparedStatement->execute();
+			header("Location : semaine.php");
 	}
-	$query = 'INSERT INTO users(username,password,school,email,confirm_email) VALUES(:username, :password, :school, :email, :confirm_email);';
-		$preparedStatement = $dbh->prepare($query);
-		$preparedStatement->bindParam(":username", $username);
-		$preparedStatement->bindParam(":password", $password);
-		$preparedStatement->bindParam(":school", $school);
-		$preparedStatement->bindParam(":email", $email);
-		$preparedStatement->bindParam(":confirm_email", $confirm_email);
-		$preparedStatement->execute();
+	else{
+		die($errors);
+	}
 }
-
-
 ?>
 
-<!doctype html>
+<!Doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -61,7 +67,7 @@ if($_POST) {
 	</header>
 	<div class="content">
 		<div class="phone">
-			<form class="synchro" method="post">
+			<!--<form class="synchro" method="post">
 			<fieldset>
 				<legend>Synchronisation</legend>
 				<ol>
@@ -84,8 +90,8 @@ if($_POST) {
 					</li>
 				</ol>
 			</fieldset>
-		</form>
-		<form class="compte" method="post" action="semaine.php">
+		</form>-->
+		<form class="compte" method="post" action="">
 			<fieldset>
 				<legend>Compte</legend>
 				<ol>
