@@ -1,5 +1,6 @@
 <?php
 
+require_once('db_connect.php');
 function is_valid_email($email) {
 	return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
@@ -29,8 +30,15 @@ if($_POST) {
 	//ici l'envoi d'email
 	// on termine
 	echo 'Merci de votre inscription.';
-	INSERT INTO users(username,password,school,email,confirm_email) VALUES('$username','$password','$email','$confirm_email');
 	}
+	$query = 'INSERT INTO users(username,password,school,email,confirm_email) VALUES(:username, :password, :school, :email, :confirm_email);';
+		$preparedStatement = $dbh->prepare($query);
+		$preparedStatement->bindParam(":username", $username);
+		$preparedStatement->bindParam(":password", $password);
+		$preparedStatement->bindParam(":school", $school);
+		$preparedStatement->bindParam(":email", $email);
+		$preparedStatement->bindParam(":confirm_email", $confirm_email);
+		$preparedStatement->execute();
 }
 
 
@@ -44,11 +52,11 @@ if($_POST) {
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
 </head>
 <body>
-	<header class="phone">
-		<ul>
+	<div class="container">
+		<header class="phone">
+		<ul class="salo">
 			<li class="back"><a href="#">Accueil</a></li>
 			<li><h1>Inscription</h1></li>
-			<li class="confirm_btn"><input id="register" name="register" type="submit" value="Enregistrer"/></li>
 		</ul>
 	</header>
 	<div class="content">
@@ -87,7 +95,7 @@ if($_POST) {
 					</li>
 					<li class="decal">
 					<label class="disappear" for="password">Mot de passe</label>
-					<input id="password" class="area" name="password" type="text" placeholder="Mot de passe..."/>
+					<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..."/>
 					</li>
 					<li class="decal">
 					<label class="disappear" for="school">École</label>
@@ -109,10 +117,12 @@ if($_POST) {
 					<input id="notifications" name="notifications" type="checkbox"/>
 					<label for="notifications">Notifications</label>
 					</li>
+					<li class="confirm_btn"><input id="register" name="register" type="submit" value="Enregistrer"/></li>
 				</ol>
 			</fieldset>
 		</form>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

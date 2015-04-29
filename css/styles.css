@@ -13,7 +13,18 @@ body {
 	font-size: 16px;
 	/*max-width: 320px;*/
 	width: 100%;
+	/*width: 460px;
+	height: 960px;*/
 	overflow-x: hidden;
+	background: url("../img/branding.png") center top no-repeat;
+}
+.container {
+	width: 460px;
+	height: 720px;
+	margin: 0 auto;
+	margin-top: 8.75rem;
+	position: relative;
+	left: .1rem;
 }
 header {
 	width: 100%;
@@ -49,6 +60,9 @@ header.phone {
 	width: 320px;
 	margin: 0 auto;
 	/*background: red;*/
+}
+input {
+	outline: none;
 }
 li.back:before {
 	color: rgba(18,132,255,1);
@@ -361,8 +375,7 @@ ul.back_to_the_future {
 }
 form.connect fieldset ol li.decal {
 	padding-left: 0;
-	margin-left: -.4rem;
-	width: 105.5%; /*Bizarre ! À revoir*/
+	text-align: center;
 }
 #ical, #googlecal, #extranet /*input [type="checkbox"]*/ {
 	border: 1px solid #8e8e93;
@@ -394,7 +407,6 @@ input:checked ~ label {
 	font-size: .8rem;
 	border: 1px solid #8e8e93;
 	margin-top: .4rem;
-	margin-left: .4rem;
 	width: 88%;
 }
 .simule {
@@ -409,17 +421,38 @@ li.simule input:checked ~ label {
 	color: #ff3824;
 }
 .moit {
-	width: 48%;
+	width: 44%;
 	display: inline-block;
 	margin-top: 1rem;
-	margin-left: .2rem;
+	margin-left: .7rem;
 }
 .moit label {
 	margin-left: 0;
+	cursor: pointer;
+	
+	transition: color ease .3s;
+}
+.moit:hover label {
+	color: #54c7fc;
+	
+	transition: color ease .3s;
+}
+.moit input {
+	cursor: pointer;
 }
 .moit a {
 	color: #8e8e93;
 	font-size: .8rem;
+	
+	transition: color ease .3s;
+}
+.moit:hover a {
+	color: #54c7fc;
+	
+	transition: color ease .3s;
+}
+.connect_elem {
+	text-align: center;
 }
 #connexion {
 	border: 1px solid #54c7fc;
@@ -430,8 +463,16 @@ li.simule input:checked ~ label {
 	color: #54c7fc;
 	padding: .4rem 0;
 	margin-top: 1rem;
-	margin-left: .6rem;
 	border-radius: 5px;
+	cursor: pointer;
+	
+	transition: all ease .3s;
+}
+#connexion:hover {
+	color: #fff;
+	background-color: #54c7fc;
+	
+	transition: all ease .3s;
 }
 a.more {
 	display: block;
@@ -452,4 +493,23 @@ a.more {
 	/*color: #44db5e;*/
 	color: #fff;
 	box-shadow: 1px 1px 5px #b2b2b2;
+}
+.balibalo {
+	background-color: #54c7fc;
+	border-bottom: none;
+	padding-bottom: .45rem;
+}
+.salo {
+	padding-top: .6rem;
+}
+.name_app {
+	width: 100%;
+	padding-top: .6rem;
+}
+.name_app h1 {
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	font-weight: 100;
+	font-size: 1.4rem;
 }
