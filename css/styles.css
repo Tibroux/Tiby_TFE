@@ -108,7 +108,7 @@ li.confirm_btn, li.more, li.today {
 	position: relative;
 	right: .3rem;
 }
-li.bottom_confirm_btn {
+li.confirm_btn_bottom {
 	width: 100%;
 	text-align: center;
 	margin-top: 1rem;
@@ -131,7 +131,7 @@ li#var1 {
 	color: rgba(18,132,255,1);
 	background-color: #f8f9f9;
 }
-#register_bottom {
+#register_bottom, #confirm_bottom {
 	height: 3rem;
 	width: 100%;
 	background-color: #ff3824;

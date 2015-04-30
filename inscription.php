@@ -123,7 +123,7 @@ if($_POST) {
 					<input id="notifications" name="notifications" type="checkbox"/>
 					<label for="notifications">Notifications</label>
 					</li>
-					<li class="bottom_confirm_btn"><input id="register_bottom" name="register_bottom" type="submit" value="Confirmer"/></li>
+					<li class="confirm_btn_bottom"><input id="register_bottom" name="register_bottom" type="submit" value="Confirmer"/></li>
 				</ol>
 			</fieldset>
 		</form>
