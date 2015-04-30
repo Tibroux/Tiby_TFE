@@ -29,7 +29,7 @@ if($_SESSION['logged_in'] != 'ok'){
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['fullname'] = $user['fullname'];
                 $_SESSION['logged_in']= 'ok';*/
-                header('location: ./semaine.php');
+                header('Location : semaine.php');
                 exit;
             }
            
@@ -64,7 +64,7 @@ if($_SESSION['logged_in'] != 'ok'){
 				<div class="logo">
 				<img src="img/logo.png" alt="Yeti"/>
 			</div>
-			<form class="connect" action="post">
+			<form class="connect" method="post" action="">
 				<fieldset>
 					<ol>
 						<li class="decal">
@@ -73,7 +73,7 @@ if($_SESSION['logged_in'] != 'ok'){
 						</li>
 						<li class="decal">
 						<label class="disappear" for="password">Mot de passe</label>
-						<input id="password" class="area" name="password" type="text" placeholder="Mot de passe..."/>
+						<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..."/>
 						</li>
 						<li class="moit">
 						<input id="connected" name="connected" type="checkbox"/>
@@ -87,7 +87,7 @@ if($_SESSION['logged_in'] != 'ok'){
 						<input id="connexion" name="connexion" type="submit" value="Se connecter"/>
 						</li>
 						<li id="bottomity" class="moit">
-						<a href="#">S'inscrire</a>
+						<a href="inscription.php">S'inscrire</a>
 						</li>
 					</ol>
 				</fieldset>
