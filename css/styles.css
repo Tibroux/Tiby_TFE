@@ -108,6 +108,11 @@ li.confirm_btn, li.more, li.today {
 	position: relative;
 	right: .3rem;
 }
+li.bottom_confirm_btn {
+	width: 100%;
+	text-align: center;
+	margin-top: 1rem;
+}
 li.more a, li.today a {
 	text-decoration: none;
 	font-size: 1.8rem;
@@ -125,6 +130,15 @@ li#var1 {
 	font-size: 1.25rem;
 	color: rgba(18,132,255,1);
 	background-color: #f8f9f9;
+}
+#register_bottom {
+	height: 3rem;
+	width: 100%;
+	background-color: #ff3824;
+	color: #fff;
+	font-size: 1.2rem;
+	border: none;
+	cursor: pointer;
 }
 .logo {
 	display: inline-block;

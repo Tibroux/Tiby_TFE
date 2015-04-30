@@ -61,7 +61,7 @@ if($_POST) {
 	<div class="container">
 		<header class="phone">
 		<ul class="salo">
-			<li class="back"><a href="#">Accueil</a></li>
+			<li class="back"><a href="connexion.php">Connexion</a></li>
 			<li><h1>Inscription</h1></li>
 		</ul>
 	</header>
@@ -123,7 +123,7 @@ if($_POST) {
 					<input id="notifications" name="notifications" type="checkbox"/>
 					<label for="notifications">Notifications</label>
 					</li>
-					<li class="confirm_btn"><input id="register" name="register" type="submit" value="Enregistrer"/></li>
+					<li class="bottom_confirm_btn"><input id="register_bottom" name="register_bottom" type="submit" value="Confirmer"/></li>
 				</ol>
 			</fieldset>
 		</form>
