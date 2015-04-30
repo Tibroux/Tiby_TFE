@@ -60,75 +60,75 @@ if($_POST) {
 <body>
 	<div class="container">
 		<header class="phone">
-		<ul class="salo">
-			<li class="back"><a href="connexion.php">Connexion</a></li>
-			<li><h1>Inscription</h1></li>
-		</ul>
-	</header>
-	<div class="content">
-		<div class="phone">
-			<form class="synchro" method="post">
-			<fieldset>
-				<legend>Synchronisation</legend>
-				<ol>
-					<li id="first_decal_synchro" class="decal">
-					<input id="ical" name="ical" type="checkbox"/>
-					<label for="ical">iCal</label>
-					</li>
-					<li class="decal">
-					<input id="googlecal" name="googlecal" type="checkbox"/>
-					<label for="googlecal">Google Calendar</label>
-					</li>
-					<li class="decal">
-					<input id="extranet" name="extranet" type="checkbox" checked/>
-					<label for="extranet">Extranet Étudiant</label>
+			<ul class="salo">
+				<li class="back"><a href="connexion.php">Connexion</a></li>
+				<li><h1>Inscription</h1></li>
+			</ul>
+		</header>
+		<div class="content">
+			<div class="phone">
+				<form class="synchro" method="post">
+				<fieldset>
+					<legend>Synchronisation</legend>
 					<ol>
-						<li>
-						<label class="disappear" for="link_extranet">Lien extranet</label>
-						<input id="link_extranet" class="area" name="link_extranet" type="text" placeholder="Lien extranet..."/></li>
+						<li id="first_decal_synchro" class="decal">
+						<input id="ical" name="ical" type="checkbox"/>
+						<label for="ical">iCal</label>
+						</li>
+						<li class="decal">
+						<input id="googlecal" name="googlecal" type="checkbox"/>
+						<label for="googlecal">Google Calendar</label>
+						</li>
+						<li class="decal">
+						<input id="extranet" name="extranet" type="checkbox" checked/>
+						<label for="extranet">Extranet Étudiant</label>
+						<ol>
+							<li>
+							<label class="disappear" for="link_extranet">Lien extranet</label>
+							<input id="link_extranet" class="area" name="link_extranet" type="text" placeholder="Lien extranet..."/></li>
+						</ol>
+						</li>
 					</ol>
-					</li>
-				</ol>
-			</fieldset>
-		</form>
-		<form class="compte" method="post" action="">
-			<fieldset>
-				<legend>Compte</legend>
-				<ol>
-					<li id="first_decal_compte" class="decal">
-					<label class="disappear" for="username">Nom d'utilisateur</label>
-					<input id="username" class="area" name="username" type="text" placeholder="Nom d'utilisateur..."/>
-					</li>
-					<li class="decal">
-					<label class="disappear" for="password">Mot de passe</label>
-					<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..."/>
-					</li>
-					<li class="decal">
-					<label class="disappear" for="school">École</label>
-					<input id="school" class="area" name="school" type="text" placeholder="École..."/>
-					</li>
-					<li class="decal">
-					<label class="disappear" for="email">E-mail</label>
-					<input id="email" class="area" name="email" type="text" placeholder="E-mail..."/>
-					</li>
-					<li class="decal">
-					<label class="disappear" for="confirm_email">Confirmation e-mail</label>
-					<input id="confirm_email" class="area" name="confirm_email" type="text" placeholder="Confirmation e-mail..."/>
-					</li>
-					<li class="simule">
-					<input id="localisation" name="localisation" type="checkbox"/>
-					<label for="localisation">Localisation</label>
-					</li>
-					<li id="last_compte" class="simule">
-					<input id="notifications" name="notifications" type="checkbox"/>
-					<label for="notifications">Notifications</label>
-					</li>
-					<li class="confirm_btn_bottom"><input id="register_bottom" name="register_bottom" type="submit" value="Confirmer"/></li>
-				</ol>
-			</fieldset>
-		</form>
+				</fieldset>
+			</form>
+			<form class="compte" method="post" action="">
+				<fieldset>
+					<legend>Compte</legend>
+					<ol>
+						<li id="first_decal_compte" class="decal">
+						<label class="disappear" for="username">Nom d'utilisateur</label>
+						<input id="username" class="area" name="username" type="text" placeholder="Nom d'utilisateur..."/>
+						</li>
+						<li class="decal">
+						<label class="disappear" for="password">Mot de passe</label>
+						<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..."/>
+						</li>
+						<li class="decal">
+						<label class="disappear" for="school">École</label>
+						<input id="school" class="area" name="school" type="text" placeholder="École..."/>
+						</li>
+						<li class="decal">
+						<label class="disappear" for="email">E-mail</label>
+						<input id="email" class="area" name="email" type="text" placeholder="E-mail..."/>
+						</li>
+						<li class="decal">
+						<label class="disappear" for="confirm_email">Confirmation e-mail</label>
+						<input id="confirm_email" class="area" name="confirm_email" type="text" placeholder="Confirmation e-mail..."/>
+						</li>
+						<li class="simule">
+						<input id="localisation" name="localisation" type="checkbox"/>
+						<label for="localisation">Localisation</label>
+						</li>
+						<li id="last_compte" class="simule">
+						<input id="notifications" name="notifications" type="checkbox"/>
+						<label for="notifications">Notifications</label>
+						</li>
+						<li class="confirm_btn_bottom"><input id="register_bottom" name="register_bottom" type="submit" value="Confirmer"/></li>
+					</ol>
+				</fieldset>
+			</form>
+			</div>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

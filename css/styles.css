@@ -474,6 +474,11 @@ li.simule input:checked ~ label {
 	
 	transition: color ease .3s;
 }
+#bottomity {
+	width: 100%;
+	text-align: center;
+	margin-left: 0;
+}
 .connect_elem {
 	text-align: center;
 }
