@@ -26,6 +26,13 @@ body {
 	position: relative;
 	left: .1rem;
 }
+#semaine {
+	margin-top: 6.45rem;
+}
+#semaine .content div.phone {
+	height: 430px;
+	padding-top: 0;
+}
 header {
 	width: 100%;
 	background-color: #f8f9f9;
@@ -186,7 +193,7 @@ ul.past_day {
 	border: 2px solid #8e8e93;
 	border-radius: 5px;
 	color: #8e8e93;
-	width: 97%;
+	width: 91%;
 	margin: 1rem auto;
 }
 ul.past_day li {
@@ -196,7 +203,7 @@ ul.past_day li h3 {
 	font-weight: 100;
 }
 form, .active_day {
-	width: 97%;
+	width: 91%;
 	text-align: left;
 	/*position: relative;
 	left: .35rem;*/
@@ -219,7 +226,7 @@ fieldset {
 	border: none;
 }
 legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
-	width: 97%;
+	width: 91%;
 	text-align: left;
 	margin-left: .5rem;
 	padding: .8rem 0 .6rem 0;
@@ -293,10 +300,11 @@ table tr td{
 td.tab_left {
 	border-right: 1px solid #54c7fc;
 	text-align: center;
+	width: 55px;
 }
 td.tab_right {
 	border-left: 1px solid #54c7fc;
-	padding-left: 1.4rem;
+	padding-left: .4rem;
 }
 table.planning {
 	border-bottom: 1px solid #54c7fc;
@@ -306,6 +314,7 @@ table.planning {
 td.double_line {
 	position: relative;
 	top: .7rem;
+	width: auto;
 }
 td.tab_split {
 	height: 1.6rem;
@@ -343,21 +352,36 @@ td.tab_right_split {
 	border: none;
 	padding-bottom: .3rem;
 }
+.more ul li input {
+	position: relative;
+	top: -2px;
+}
 .more ul li input.add {
-	width: 70%;
+	width: 67%;
 	margin-top: .35rem;
 }
 .more ul li input.ok {
 	color: #54c7fc;
 	background-color: #fff;
 	font-size: 1rem;
-	text-align: right;
-	width: 3rem;
+	text-align: center;
+	width: 3.35rem;
+	height: 2.15rem;
+	border-radius: 5px;
+	cursor: pointer;
+	
+	transition: all ease .3s;
+}
+.more ul li input.ok:hover {
+	color: #fff;
+	background-color: #54c7fc;
+	
+	transition: all ease .3s;
 }
 ul.back_to_the_future {
 	border: 2px solid rgba(18,132,255,1);
 	border-radius: 5px;
-	width: 97.5%;
+	width: 91%;
 	margin: 1rem auto;
 }
 .back_to_the_future .todo, .back_to_the_future .planning {
@@ -389,6 +413,10 @@ ul.back_to_the_future {
 }
 .back_to_the_future li .todo .more ul li .ok {
 	color: rgba(18,132,255,1);
+}
+.back_to_the_future li .todo .more ul li .ok:hover {
+	color: #fff;
+	background-color: rgba(18,132,255,1);
 }
 #first_decal_compte {
 	border-top: 1px solid #ff3824;
@@ -444,9 +472,9 @@ li.simule input:checked ~ label {
 	color: #ff3824;
 }
 .moit {
-	width: 44%;
+	width: 47%;
 	display: inline-block;
-	margin-top: 1rem;
+	margin-top: .15rem;
 	margin-left: .7rem;
 }
 .moit label {
