@@ -1,5 +1,11 @@
 <?php
+session_start();
+error_reporting(E_WARNING | E_ERROR);
 
+//die('crackastrophique');
+require_once('db_connect.php');
+
+//die('crackastrophe');
 if($_SESSION['logged_in'] != 'ok'){
     //sanatisation
     $username = trim(strip_tags($_POST['username']));
@@ -12,35 +18,43 @@ if($_SESSION['logged_in'] != 'ok'){
         }
         
     if ( $password == '') {
-        $errors['password'] = 'Mot de passe ?';
+		$errors['password'] = 'Mot de passe ?';
     }
     
     // Si pas d'erreurs.
+	//die('crackotte');
     if(count($errors) < 1 ) {
         
         // Pour chaque tableau User où l'on définit $user, on vérifie si la clé username et password correspond a ce qui a été envoyé en $_POST.
+		die('crack');
+		$sql= "SELECT * FROM users WHERE username ='$username' && password ='$password'";
+		echo $sql;
+		exit;
+		$dbh->execute($sql);
+		// stock
+		header('Location : semaine.php');
+	} else {
+		die('boum');
+	}
         
-        foreach( $users as $user ){
-        
-            if( $username['username'] == $username && $password['password'] == $password ) {
-                
+        /*if( $username['username'] == $username && $password['password'] == $password ) {
+                die('bordel');
                 // si c'est le cas, on stocke l'username, le role et le fullname dans la session et on indique que logged_in est égale à ok avant de rediriger vers index.php.
-                /*$_SESSION['username'] = $user['username'];
-                $_SESSION['role'] = $user['role'];
-                $_SESSION['fullname'] = $user['fullname'];
-                $_SESSION['logged_in']= 'ok';*/
-                header('Location : semaine.php');
+                $_SESSION['username'] = $username['username'];
+                $_SESSION['logged_in']= 'ok';
+                die('proutility');
+				header('Location : semaine.php');
                 exit;
-            }
-           
-        }
-         
+        } else{
+			die("boum");
+}
+*/
         
-    $errors['resultat'] = 'Login introuvable...';
+    $errors['resultat'] = 'Nom d\'utilisateur introuvable...';
     }
     
-    require_once('db_connect.php');
-    
+} else {
+    die('prout');
 }
 
 ?>
@@ -64,7 +78,7 @@ if($_SESSION['logged_in'] != 'ok'){
 				<div class="logo">
 				<img src="img/logo.png" alt="Yeti"/>
 			</div>
-			<form class="connect" method="post" action="">
+			<form class="connect" method="post">
 				<fieldset>
 					<ol>
 						<li class="decal">
