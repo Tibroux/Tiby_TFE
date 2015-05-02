@@ -42,7 +42,7 @@ if($_POST) {
 			$preparedStatement->bindParam(":email", $email);
 			$preparedStatement->bindParam(":confirm_email", $confirm_email);
 			$preparedStatement->execute();
-			header("Location : semaine.php");
+			header("Location: semaine.php");
 	}
 	else{
 		die($errors);
@@ -61,7 +61,7 @@ if($_POST) {
 	<div class="container">
 		<header class="phone">
 			<ul class="salo">
-				<li class="back"><a href="connexion.php">Connexion</a></li>
+				<li class="back"><a href="index.php">Connexion</a></li>
 				<li><h1>Inscription</h1></li>
 			</ul>
 		</header>

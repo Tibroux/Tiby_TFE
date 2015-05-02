@@ -17,7 +17,7 @@ $sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user
 
 $q =  $dbh ->query($sql);
 $tasks = $q->fetch(PDO::FETCH_ASSOC);
-foreach ($tasks as $task => $user_id) {
+foreach ($tasks as $task => $value) {
 	//echo $task; // Montrer les tâches
 }
 /*echo '<pre>';
@@ -91,7 +91,7 @@ exit;*/
 				<li>
 					<div class="todo">
 						<ul>
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task']) ?></label></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($task . $value) ?></label></li>
 							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task']) ?></label></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Aller à la bibliothèque"/></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Rentre à pied"/></li>

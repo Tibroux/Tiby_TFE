@@ -32,7 +32,7 @@ if($_SESSION['logged_in'] != 'ok'){
 		exit;
 		$dbh->execute($sql);
 		// stock
-		header('Location : semaine.php');
+		header('Location: semaine.php');
 	} else {
 		die('boum');
 	}
