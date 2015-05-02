@@ -26,11 +26,8 @@ body {
 	position: relative;
 	left: .1rem;
 }
-#semaine {
-	margin-top: 6.45rem;
-}
 #semaine .content div.phone {
-	height: 467px;
+	height: 430px;
 	padding-top: 0;
 }
 header {
