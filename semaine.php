@@ -10,6 +10,9 @@ if($_SESSION['logged_in'] != 'ok') {
 	exit;
 }
 
+// nom d'utilisateur
+$name= "SELECT * FROM users LEFT JOIN tasks ON users.id= tasks.user_id WHERE user_id = '".$_SESSION['user'][0]['id']."'";
+
 // la semaine de l'utilisateur dans la DB
 
 $sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = '".$_SESSION['user'][0]['id']."'";
@@ -35,7 +38,7 @@ exit;*/
 		<header class="phone">
 			<ul class="exception">
 				<li class="back"><a href="mois.php">Mars</a></li>
-				<li><h1 class="space"><a class="user" href="reglages.php">Peter</a></h1></li>
+				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo utf8_decode($users['username']) ?></a></h1></li>
 				<li class="more"><a href="#">+</a></li>
 			</ul>
 			<ul class="champs">
