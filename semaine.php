@@ -91,8 +91,8 @@ exit;*/
 				<li>
 					<div class="todo">
 						<ul>
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($task . $value) ?></label></li>
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task']) ?></label></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task'][0]) ?></label></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task'][1]) ?></label></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Aller à la bibliothèque"/></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Rentre à pied"/></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Croiser Oncle Ben"/></li>
