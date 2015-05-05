@@ -15,14 +15,19 @@ $name= "SELECT * FROM users LEFT JOIN tasks ON users.id= tasks.user_id WHERE use
 
 // la semaine de l'utilisateur dans la DB
 
-$sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = '".$_SESSION['user'][0]['id']."'";
+$sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
 //echo $sql;
 
-$q =  $dbh ->query($sql);
-$tasks = $q->fetch(PDO::FETCH_ASSOC);
-foreach ($tasks as $task => $value) {
+$q =  $dbh ->prepare($sql);
+$q -> bindParam(":tadaa",$_SESSION['user'][0]['id']);
+$q -> execute();
+$tasks = $q->fetchAll(PDO::FETCH_ASSOC);
+//foreach ($tasks as $keys->$t) {
+	//var_dump($tasks); // Montrer les tâches
+
+/*while ($tasks as $task => $value) {
 	//echo $task; // Montrer les tâches
-}
+}*/
 /*echo '<pre>';
 print_r($tasks);
 exit;*/
@@ -94,16 +99,20 @@ exit;*/
 				<li>
 					<div class="todo">
 						<ul>
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task'][0]) ?></label></li>
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo utf8_decode($tasks['task'][1]) ?></label></li>
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Aller à la bibliothèque"/></li>
+						<?php
+						foreach ($tasks as $keys=>$t){
+	?>
+						
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo $t['task']; ?></label></li>
+							<?php } ?>
+							<!--<li><input type="checkbox"/><input class="todo_right" type="text" value="Aller à la bibliothèque"/></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Rentre à pied"/></li>
 							<li><input type="checkbox"/><input class="todo_right" type="text" value="Croiser Oncle Ben"/></li>
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Parler à Tante May"/></li>
+							<li><input type="checkbox"/><input class="todo_right" type="text" value="Parler à Tante May"/></li>-->
 						</ul>
-						<form class="more">
+						<form class="more" method="post" action="post_task.php">
 							<ul>
-								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
 							</ul>
 						</form>
 					</div>
