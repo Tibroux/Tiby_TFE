@@ -11,8 +11,10 @@ if($_SESSION['logged_in'] != 'ok') {
 }
 
 // nom d'utilisateur
-$name= "SELECT * FROM users LEFT JOIN tasks ON users.id= tasks.user_id WHERE user_id = '".$_SESSION['user'][0]['id']."'";
-
+$name= "SELECT * FROM users WHERE username = $username";
+echo '<pre>'
+print_r($name);
+exit;
 // la semaine de l'utilisateur dans la DB
 
 $sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
@@ -43,7 +45,7 @@ exit;*/
 		<header class="phone">
 			<ul class="exception">
 				<li class="back"><a href="mois.php">Mars</a></li>
-				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo utf8_decode($users['username']) ?></a></h1></li>
+				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo $user ?></a></h1></li>
 				<li class="more"><a href="#">+</a></li>
 			</ul>
 			<ul class="champs">
@@ -57,7 +59,7 @@ exit;*/
 			<div class="phone">
 				<ul class="past_day">
 				<li>
-					<h3 class="date">Lundi 16 mars 2015</h3>
+					<h3 class="date">Lundi 4 mai 2015</h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
@@ -66,7 +68,16 @@ exit;*/
 			</ul>
 			<ul class="past_day">
 				<li>
-					<h3 class="date">Mardi 17 mars 2015</h3>
+					<h3 class="date">Mardi 5 mai 2015</h3>
+				</li>
+				<li class="disappear">
+					<table class="planning">
+					</table>
+				</li>
+			</ul>
+			<ul class="past_day">
+				<li>
+					<h3 class="date">Mercredi 6 mai 2015</h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
@@ -75,24 +86,29 @@ exit;*/
 			</ul>
 			<ul class="active_day">
 				<li>
-					<h3 class="date">Mercredi 18 mars 2015</h3>
+					<h3 class="date">Jeudi 7 mai 2015</h3>
 				</li>
 				<li>
 					<table class="planning">
 						<tr>
-							<td class="tab_left">17:10</td>
-							<td class="double_line">Responsabilités & Grand pouvoir<br/><span class="prof">Oncle Ben</span></td>
-							<td class="tab_right">Parking B4</td>
+							<td class="tab_left">08:10</td>
+							<td class="double_line">Aller au Starbucks<br/><span class="prof"></span></td>
+							<td class="tab_right">Gare</td>
 						</tr>
 						<tr>
-							<td class="tab_left_split">17:20</td>
+							<td class="tab_left_split"></td>
 							<td class="tab_split"></td>
 							<td class="tab_right_split"></td>
 						</tr>
 						<tr>
-							<td class="tab_left">18:30</td>
-							<td class="double_line">Triste nouvelle<br/><span class="prof">Tante May</span></td>
-							<td class="tab_right">Domicile</td>
+							<td class="tab_left">9:15</td>
+							<td class="double_line">Présentation Bêta<br/><span class="prof">3 Pokémons</span></td>
+							<td class="tab_right">A79</td>
+						</tr>
+						<tr>
+							<td class="tab_left_split"></td>
+							<td class="tab_split"></td>
+							<td class="tab_right_split"></td>
 						</tr>
 					</table>
 				</li>
@@ -105,10 +121,6 @@ exit;*/
 						
 							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo $t['task']; ?></label></li>
 							<?php } ?>
-							<!--<li><input type="checkbox"/><input class="todo_right" type="text" value="Aller à la bibliothèque"/></li>
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Rentre à pied"/></li>
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Croiser Oncle Ben"/></li>
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Parler à Tante May"/></li>-->
 						</ul>
 						<form class="more" method="post" action="post_task.php">
 							<ul>
@@ -120,7 +132,7 @@ exit;*/
 			</ul>
 			<ul class="back_to_the_future">
 				<li>
-					<h3 class="date">Jeudi 19 mars 2015</h3>
+					<h3 class="date">Vendredi 8 mai 2015</h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
@@ -141,7 +153,7 @@ exit;*/
 			</ul>
 			<ul class="back_to_the_future">
 				<li>
-					<h3 class="date">Vendredi 20 mars 2015</h3>
+					<h3 class="date">Samedi 9 mai 2015</h3>
 				</li>
 				<li>
 					<table class="planning">

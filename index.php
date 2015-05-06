@@ -70,12 +70,12 @@ if($_SESSION['logged_in'] != 'ok'){
 					<ol>
 						<li class="decal">
 						<label class="disappear" for="username">Nom d'utilisateur</label>
-						<input id="username" class="area" name="username" type="text" placeholder="Nom d'utilisateur..." value="yoyo"/>
+						<input id="username" class="area" name="username" type="text" placeholder="Nom d'utilisateur..."/>
 						<?php echo message_erreur($errors, 'username');?>
 						</li>
 						<li class="decal">
 						<label class="disappear" for="password">Mot de passe</label>
-						<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..." value="yoyo"/>
+						<input id="password" class="area" name="password" type="password" placeholder="Mot de passe..."/>
 						<?php echo message_erreur($errors, 'password');?>
 
 						</li>
