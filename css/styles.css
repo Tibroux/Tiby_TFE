@@ -72,6 +72,7 @@ div.phone {
 }
 input {
 	outline: none;
+	cursor: pointer;
 }
 li.back:before {
 	color: rgba(18,132,255,1);
@@ -568,4 +569,27 @@ a.more {
 }
 .prof {
 	color: #8e8e93;
+}
+button {
+	width: 1.4rem;
+	height: 1.4rem;
+	float: right;
+	margin-right: 5%;
+	border: 1px solid #FF4940;
+	border-radius: 50%;
+	background-color: #fff;
+	color: #FF4940;
+	text-align: center;
+	font-size: 1.8rem;
+	line-height: 0;
+	padding-bottom: .3rem;
+	cursor: pointer;
+	
+	transition: all ease .3s;
+}
+button:hover {
+	background-color: #FF4940;
+	color: #fff;
+	
+	transition: all ease .3s;
 }

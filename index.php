@@ -28,9 +28,9 @@ if($_SESSION['logged_in'] != 'ok'){
 			// echo $sql;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array($username, $password));
-			$user = $sth->fetchAll();
+			$user = $sth->fetchAll(PDO::FETCH_ASSOC);
 			
-			$_SESSION['user'] = $user;
+			$_SESSION['user'] = $user[0];
 			$_SESSION['logged_in'] = 'ok';
 			//print_r($_SESSION);
 			header('Location: semaine.php');

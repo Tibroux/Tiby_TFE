@@ -1,6 +1,5 @@
 <?php
 require_once('config.inc.php');
-
 // vérifier s'il est loggué
 //echo '<pre>';
 //print_r($_SESSION);
@@ -9,21 +8,23 @@ if($_SESSION['logged_in'] != 'ok') {
 	header('Location: index.php');
 	exit;
 }
-
 // nom d'utilisateur
-$name= "SELECT * FROM users WHERE username = $username";
-echo '<pre>'
-print_r($name);
-exit;
+$name= "SELECT * FROM users WHERE id=:id;";
+$u=$dbh->prepare($name);
+$u->bindParam(":id",$_SESSION['user'][0]['id']);
+$u->execute();
+$usernamedb=$u->fetchAll(PDO::FETCH_ASSOC);
 // la semaine de l'utilisateur dans la DB
-
-$sql= "SELECT * FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
+//var_dump($_SESSION);
+//var_dump($usernamedb);
+$sql= "SELECT tasks.id,tasks.checked,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
 //echo $sql;
 
 $q =  $dbh ->prepare($sql);
 $q -> bindParam(":tadaa",$_SESSION['user'][0]['id']);
 $q -> execute();
 $tasks = $q->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($tasks);
 //foreach ($tasks as $keys->$t) {
 	//var_dump($tasks); // Montrer les tâches
 
@@ -39,13 +40,15 @@ exit;*/
     <meta charset="UTF-8">
     <title>Semaine</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/magie.js"></script>
 </head>
 <body>
 	<div id="semaine" class="container">
 		<header class="phone">
 			<ul class="exception">
 				<li class="back"><a href="mois.php">Mars</a></li>
-				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo $user ?></a></h1></li>
+				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo $usernamedb[0]['username'] ?></a></h1></li>
 				<li class="more"><a href="#">+</a></li>
 			</ul>
 			<ul class="champs">
@@ -119,7 +122,7 @@ exit;*/
 						foreach ($tasks as $keys=>$t){
 	?>
 						
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo $t['task']; ?></label></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo $t['task']; ?></label><button data-id="<?php echo $t['id']; ?>">-</button></li>
 							<?php } ?>
 						</ul>
 						<form class="more" method="post" action="post_task.php">
@@ -141,7 +144,7 @@ exit;*/
 				<li>
 				<div class="todo">
 						<ul class="future_adjust">
-							<li><input type="checkbox"/><input class="todo_right" type="text" value="Préparer les funérailles"/></li>
+							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">JPO</label><button>-</button></li>
 						</ul>
 						<form class="more">
 							<ul>
@@ -159,8 +162,33 @@ exit;*/
 					<table class="planning">
 						<tr>
 							<td>10:00</td>
-							<td>Enterrement</td>
-							<td class="tab_right">Cimetière</td>
+							<td>Gueule de bois</td>
+							<td class="tab_right">Vomi</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date">Dimanche 10 mai 2015</h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>13:30</td>
+							<td>Mortal Kombat</td>
+							<td class="tab_right">Scorpion</td>
 						</tr>
 					</table>
 				</li>
