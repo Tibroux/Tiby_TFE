@@ -30,7 +30,7 @@ if($_SESSION['logged_in'] != 'ok'){
 			$sth->execute(array($username, $password));
 			$user = $sth->fetchAll(PDO::FETCH_ASSOC);
 			
-			$_SESSION['user'] = $user[0];
+			$_SESSION['user'] = $user;
 			$_SESSION['logged_in'] = 'ok';
 			//print_r($_SESSION);
 			header('Location: semaine.php');

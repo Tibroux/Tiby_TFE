@@ -47,13 +47,12 @@ exit;*/
 	<div id="semaine" class="container">
 		<header class="phone">
 			<ul class="exception">
-				<li class="back"><a href="mois.php">Mars</a></li>
+				<li class="back"><a href="mois.php">Mai</a></li>
 				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo $usernamedb[0]['username'] ?></a></h1></li>
-				<li class="more"><a href="#">+</a></li>
 			</ul>
 			<ul class="champs">
 				<li class="section_search">
-				<img class="search_logo" src="#" alt="search_logo"/>
+				<img class="search_logo" src="img/search_icon.png" alt="search_logo"/>
 				<input id="search" name="search" type="text" placeholder="Rechercher"/>
 				</li>
 			</ul>

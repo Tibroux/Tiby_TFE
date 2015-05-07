@@ -4,5 +4,5 @@ try {
 	$dbh->exec('SET CHARACTER SET utf8');
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
-    die();
+    die('connection failed');
 }

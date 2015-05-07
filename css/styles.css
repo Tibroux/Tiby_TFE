@@ -30,6 +30,13 @@ body {
 	height: 430px;
 	padding-top: 0;
 }
+#mois .content div.phone {
+	height: 415px;
+	padding-top: 1rem;
+}
+#mois header.phone {
+	padding-top: .6rem;
+}
 header {
 	width: 100%;
 	background-color: #f8f9f9;
@@ -83,6 +90,7 @@ li.back {
 	/*width: 33%;*/
 	text-align: left;
 	margin-left: .4rem;
+	padding-top: .55rem;
 }
 li.back a {
 	color: rgba(18,132,255,1);
@@ -230,27 +238,28 @@ legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
 	padding: .8rem 0 .6rem 0;
 	font-size: 1rem;
 }
-.mars2015, .avril2015 {
+.mai2015, .juin2015 {
 	border: 2px solid #54c7fc;
 	border-radius: 5px;
 	width: 90%;
 	margin: auto;
 }
-.avril2015 {
+.juin2015 {
 	border-color: rgba(18,132,255,1);
 	margin-top: 1rem;
 	margin-bottom: 4rem;
+	height: 260px;
 }
 h4 {
 	font-weight: 100;
 }
-.mars2015 h4 {
+.mai2015 h4 {
 	color: #54c7fc;
 }
-.avril2015 h4 {
+.juin2015 h4 {
 	color: rgba(18,132,255,1);
 }
-.mars2015 table, .avril2015 table {
+.mai2015 table, .juin2015 table {
 	width: 92%;
 	display: inline-block;
 	text-align: center;
@@ -259,13 +268,13 @@ h4 {
 	padding-left: .75rem;
 	padding-right: .75rem;
 }
-.mars2015 table tr th, .avril2015 table tr th {
+.mai2015 table tr th, .juin2015 table tr th {
 	width: 14%;
 }
-.avril2015 table {
+.juin2015 table {
 	border-color: rgba(18,132,255,1);
 }
-.mars2015 table tr th, .avril2015 table tr th {
+.mai2015 table tr th, .juin2015 table tr th {
 	font-weight: 400;
 }
 .active_day li h3.date {
@@ -530,8 +539,10 @@ li.simule input:checked ~ label {
 }
 a.more {
 	display: block;
-	position: fixed;
-	right: 30.85rem;
+	position: relative;
+	left: 16rem;
+	top: 1rem;
+	/*right: 30.85rem;
 	bottom: 1rem;
 	/*border: 1px solid #44db5e;*/
 	border: none;
@@ -584,6 +595,7 @@ button {
 	line-height: 0;
 	padding-bottom: .3rem;
 	cursor: pointer;
+	outline: none;
 	
 	transition: all ease .3s;
 }
