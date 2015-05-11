@@ -14,20 +14,20 @@ body {
 	/*max-width: 320px;*/
 	width: 100%;
 	/*width: 460px;
-	height: 960px;*/
+	height: 960px;
 	overflow-x: hidden;
-	background: url("../img/branding.png") center top no-repeat;
+	background: url("../img/branding.png") center top no-repeat;*/
 }
 .container {
-	width: 460px;
-	height: 720px;
 	margin: 0 auto;
+	/*width: 460px;
+	height: 720px;
 	margin-top: 8.75rem;
 	position: relative;
-	left: .1rem;
+	left: .1rem;*/
 }
 #semaine .content div.phone {
-	height: 430px;
+	/*height: 430px;*/
 	padding-top: 0;
 }
 #mois .content div.phone {
@@ -65,16 +65,16 @@ header ul li {
 	width: 100%;
 }
 header.phone {
-	margin-top: 1.4rem;
+	/*margin-top: 1.4rem;*/
 }
 .phone {
-	width: 320px;
+	/*width: 320px;*/
 	margin: 0 auto;
 	/*background: red;*/
 }
 div.phone {
-	height: 472px;
-	overflow-y: scroll;
+	/*height: 472px;
+	overflow-y: scroll;*/
 	padding-top: 1.4rem;
 }
 input {
@@ -173,7 +173,7 @@ ul.champs {
 li.section_search {
 	border-radius: 5px;
 	display: block;
-	width: 288px;
+	width: 89%;
 	margin: .8rem auto 0;
 	height: 1.6rem;
 	background-color: #fff;
@@ -343,9 +343,15 @@ td.tab_right_split {
 .todo {
 	width: 100%;
 }
+.todo ul {
+	border-top: 1px solid #8e8e93;
+}
+form.more ul {
+	border-top: 0;
+}
 .todo ul li {
 	border-bottom: 1px solid #8e8e93;
-	height: 2.2rem;
+	min-height: 2.2rem;
 	padding-top: .6rem;
 }
 .todo ul li input {
@@ -354,6 +360,8 @@ td.tab_right_split {
 	font-size: .95rem;
 	outline: none;
 	margin-left: 1rem;
+	margin-top: .4rem;
+	float: left;
 }
 .more ul li {
 	border: none;
@@ -376,6 +384,7 @@ td.tab_right_split {
 	height: 2.15rem;
 	border-radius: 5px;
 	cursor: pointer;
+	margin-top: 0;
 	
 	transition: all ease .3s;
 }
@@ -446,6 +455,11 @@ form.connect fieldset ol li.decal {
 label {
 	margin-left: 2.5rem;
 	color: #8e8e93;
+}
+.todo_right {
+	display: inline-block;
+	width: 60%;
+	margin-right: .6rem;
 }
 .disappear {
 	display: none;
@@ -584,8 +598,8 @@ a.more {
 button {
 	width: 1.4rem;
 	height: 1.4rem;
-	float: right;
-	margin-right: 5%;
+	/*float: right;
+	margin-right: 5%;*/
 	border: 1px solid #FF4940;
 	border-radius: 50%;
 	background-color: #fff;
