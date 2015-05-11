@@ -37,9 +37,15 @@ exit;*/
 ?><!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Semaine</title>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="icon" href="img/icon_app.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="apple-mobile-web-app-title" content="Yeti"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon-precomposed" href="img/icon_app.png"/>
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/magie.js"></script>
@@ -48,8 +54,9 @@ exit;*/
 	<div id="semaine" class="container">
 		<header class="phone">
 			<ul class="exception">
-				<li class="back"><a href="mois.php">Mai</a></li>
-				<li><h1 class="space"><a class="user" href="reglages.php"><?php echo $usernamedb[0]['username'] ?></a></h1></li>
+				<li class="back"><a href="mois.php"><img src="#" alt="retour">Mai</a></li>
+				<li><h1 class="space"><?php echo $usernamedb[0]['username'] ?></h1></li>
+				<li class="parameter"><a href="reglages.php"><img src="#" alt="paramètres"></a></li>
 			</ul>
 			<ul class="champs">
 				<li class="section_search">
@@ -117,6 +124,7 @@ exit;*/
 				</li>
 				<li>
 					<div class="todo">
+						<h3>Tâches du jour :</h3>
 						<ul>
 						<?php
 						foreach ($tasks as $keys=>$t){
@@ -143,6 +151,7 @@ exit;*/
 				</li>
 				<li>
 				<div class="todo">
+					<h3>Tâches du jour :</h3>
 						<ul class="future_adjust">
 							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">JPO</label><button>-</button></li>
 						</ul>
@@ -169,6 +178,7 @@ exit;*/
 				</li>
 				<li>
 					<div class="todo">
+						<h3>Tâches du jour :</h3>
 						<ul>
 						</ul>
 						<form class="more">
@@ -194,6 +204,7 @@ exit;*/
 				</li>
 				<li>
 					<div class="todo">
+						<h3>Tâches du jour :</h3>
 						<ul>
 						</ul>
 						<form class="more">

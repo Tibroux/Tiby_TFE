@@ -26,6 +26,16 @@ body {
 	position: relative;
 	left: .1rem;*/
 }
+.parameter {
+	width: 27%;
+	text-align: right;
+}
+.parameter a img {
+	width: 1.2rem;
+	height: 1.2rem;
+	position: relative;
+	top: .2rem;
+}
 #semaine .content div.phone {
 	/*height: 430px;*/
 	padding-top: 0;
@@ -58,7 +68,7 @@ header ul {
 }
 header ul li {
 	display: inline-block;
-	width: 32.5%;
+	width: 32%;
 	text-align: center;
 }
 .content {
@@ -81,11 +91,6 @@ input {
 	outline: none;
 	cursor: pointer;
 }
-li.back:before {
-	color: rgba(18,132,255,1);
-	content: "<";
-	font-size: 1.25rem; /*7,51pt*/
-}
 li.back {
 	/*width: 33%;*/
 	text-align: left;
@@ -96,6 +101,13 @@ li.back a {
 	color: rgba(18,132,255,1);
 	font-size: 1.25rem; /*7,51pt*/
 	text-decoration: none;
+}
+li.back a img {
+	width: 1.2rem;
+	height: 1.4rem;
+	position: relative;
+	top: .2rem;
+	margin: 0 1% 0 7%;
 }
 h1 {
 	font-size: 1.25rem;
@@ -232,10 +244,10 @@ fieldset {
 	border: none;
 }
 legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
-	width: 91%;
-	text-align: left;
-	margin-left: .5rem;
-	padding: .8rem 0 .6rem 0;
+	/*width: 91%;
+	text-align: left;*/
+	margin-left: 3%;
+	padding: .7rem 0;
 	font-size: 1rem;
 }
 .mai2015, .juin2015 {
@@ -343,6 +355,13 @@ td.tab_right_split {
 .todo {
 	width: 100%;
 }
+.todo h3 {
+	margin-left: 3%;
+	padding: .6rem 0;
+	font-weight: 100;
+	color: #8e8e93;
+	font-size: 1.15rem;
+}
 .todo ul {
 	border-top: 1px solid #8e8e93;
 }
@@ -409,6 +428,7 @@ ul.back_to_the_future {
 	color: rgba(18,132,255,1);
 	font-size: 1.15rem;
 	font-weight: 100;
+	padding-top: 1rem;
 }
 .back_to_the_future table.planning {
 	width: 100%;
