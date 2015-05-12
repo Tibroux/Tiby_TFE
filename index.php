@@ -54,11 +54,11 @@ if($_SESSION['logged_in'] != 'ok'){
     <meta name="mobile-web-app-capable" content="yes"/>
     <link rel="icon" href="img/icon_app.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="white"/>-->
     <meta name="apple-mobile-web-app-title" content="Yeti"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon-precomposed" href="img/icon_app.png"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimal-ui">
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
 </head>
 <body>

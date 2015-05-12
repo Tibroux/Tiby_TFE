@@ -1,4 +1,40 @@
-<!doctype html>
+<?php
+require_once('config.inc.php');
+// vérifier s'il est loggué
+//echo '<pre>';
+//print_r($_SESSION);
+//exit;
+if($_SESSION['logged_in'] != 'ok') {
+	header('Location: index.php');
+	exit;
+}
+// nom d'utilisateur
+$name= "SELECT * FROM users WHERE id=:id;";
+$u=$dbh->prepare($name);
+$u->bindParam(":id",$_SESSION['user'][0]['id']);
+$u->execute();
+$usernamedb=$u->fetchAll(PDO::FETCH_ASSOC);
+// la semaine de l'utilisateur dans la DB
+//var_dump($_SESSION);
+//var_dump($usernamedb);
+$sql= "SELECT tasks.id,tasks.checked,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
+//echo $sql;
+
+$q =  $dbh ->prepare($sql);
+$q -> bindParam(":tadaa",$_SESSION['user'][0]['id']);
+$q -> execute();
+$tasks = $q->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($tasks);
+//foreach ($tasks as $keys->$t) {
+	//var_dump($tasks); // Montrer les tâches
+
+/*while ($tasks as $task => $value) {
+	//echo $task; // Montrer les tâches
+}*/
+/*echo '<pre>';
+print_r($tasks);
+exit;*/
+?><!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,19 +42,20 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <link rel="icon" href="img/icon_app.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="white"/>-->
     <meta name="apple-mobile-web-app-title" content="Yeti"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon-precomposed" href="img/icon_app.png"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimal-ui">
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
 </head>
 <body>
 	<div id="mois" class="container">
 		<header class="phone">
 			<ul class="exception">
-				<li class="two_elem"><h1 class="space"><a class="user" href="reglages.php">Tiby</a></h1></li>
-				<li class="today"><a href="semaine.php">Aujourd'hui</a></li>
+				<li class="back"></li>
+				<li><h1 class="space"><?php echo $usernamedb[0]['username'] ?></h1></li>
+				<li id="trick" class="today"><a href="semaine.php">Aujourd'hui<img src="#" alt=">"></a></li>
 			</ul>
 			<ul class="champs">
 				<li class="section_search">
@@ -146,7 +183,7 @@
 						<td></td>
 					</tr>
 				</table>
-				<a class="more" href="#">+</a>
+				<!--<a class="more" href="#">+</a>-->
 			</div>
 			</div>
 		</div>
