@@ -118,11 +118,11 @@ if($_POST) {
 						</li>
 						<li class="decal">
 						<label class="disappear" for="email">E-mail</label>
-						<input id="email" class="area" name="email" type="text" placeholder="E-mail..."/>
+						<input id="email" class="area" name="email" type="email" placeholder="E-mail..."/>
 						</li>
 						<li class="decal">
 						<label class="disappear" for="confirm_email">Confirmation e-mail</label>
-						<input id="confirm_email" class="area" name="confirm_email" type="text" placeholder="Confirmation e-mail..."/>
+						<input id="confirm_email" class="area" name="confirm_email" type="email" placeholder="Confirmation e-mail..."/>
 						</li>
 						<li class="simule">
 						<input id="localisation" name="localisation" type="checkbox"/>
