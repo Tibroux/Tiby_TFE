@@ -8,6 +8,11 @@ if($_SESSION['logged_in'] != 'ok') {
 	header('Location: index.php');
 	exit;
 }
+// date
+//$yesterday = mktime(0, 0, 0, date("m") , date("d")-1, date("Y")); /* Voir pour le afficher le jour en moins... */
+$yesterday = date('d F Y');
+$today = date('l d F Y');
+$tomorrow = date('l d F Y');
 // nom d'utilisateur
 $name= "SELECT * FROM users WHERE id=:id;";
 $u=$dbh->prepare($name);
@@ -90,7 +95,7 @@ exit;*/
 			</ul>
 			<ul class="past_day">
 				<li>
-					<h3 class="date">Mercredi 6 mai 2015</h3>
+					<h3 class="date"><?php echo $yesterday; ?></h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
@@ -99,7 +104,7 @@ exit;*/
 			</ul>
 			<ul class="active_day">
 				<li>
-					<h3 class="date">Jeudi 7 mai 2015</h3>
+					<h3 class="date"><?php echo $today; ?></h3>
 				</li>
 				<li>
 					<table class="planning">
@@ -146,7 +151,7 @@ exit;*/
 			</ul>
 			<ul class="back_to_the_future">
 				<li>
-					<h3 class="date">Vendredi 8 mai 2015</h3>
+					<h3 class="date"><?php echo $tomorrow; ?></h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">

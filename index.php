@@ -39,7 +39,7 @@ if($_SESSION['logged_in'] != 'ok'){
 		} else {
 			$errors['resultat'] = 'Nom d\'utilisateur introuvable...';
 		}
-	die("formulaire posté mais rien");	
+	die("formulaire posté mais rien");
 	}
 } else{
 	header('Location: semaine.php');

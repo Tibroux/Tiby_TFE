@@ -101,7 +101,7 @@ li.back {
 	padding-top: .55rem;
 }
 li.back a {
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 	font-size: 1.25rem; /*7,51pt*/
 	text-decoration: none;
 }
@@ -152,7 +152,7 @@ li.confirm_btn_bottom {
 li.more a, li.today a {
 	text-decoration: none;
 	font-size: 1.8rem;
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 }
 li.today a {
 	font-size: 1.15rem;
@@ -164,7 +164,7 @@ li#var1 {
 	height: 2rem;
 	border: none;
 	font-size: 1.25rem;
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 	background-color: #f8f9f9;
 }
 #register_bottom, #confirm_bottom {
@@ -268,7 +268,7 @@ legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
 	margin: auto;
 }
 .juin2015 {
-	border-color: rgba(18,132,255,1);
+	border-color: #0076ff;
 	margin-top: 1rem;
 	margin-bottom: 4rem;
 	height: 260px;
@@ -280,7 +280,7 @@ h4 {
 	color: #54c7fc;
 }
 .juin2015 h4 {
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 }
 .mai2015 table, .juin2015 table {
 	width: 92%;
@@ -295,7 +295,7 @@ h4 {
 	width: 14%;
 }
 .juin2015 table {
-	border-color: rgba(18,132,255,1);
+	border-color: #0076ff;
 }
 .mai2015 table tr th, .juin2015 table tr th {
 	font-weight: 400;
@@ -430,25 +430,25 @@ input.hour {
 	transition: all ease .3s;
 }
 ul.back_to_the_future {
-	border: 2px solid rgba(18,132,255,1);
+	border: 2px solid #0076ff;
 	border-radius: 5px;
 	width: 91%;
 	margin: 1rem auto;
 }
 .back_to_the_future .todo, .back_to_the_future .planning {
-	border-top: 1px solid rgba(18,132,255,1);
+	border-top: 1px solid #0076ff;
 	border-bottom: none;
 	margin-top: .4rem;
 }
 .back_to_the_future li h3.date {
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 	font-size: 1.15rem;
 	font-weight: 100;
 	padding-top: 1rem;
 }
 .back_to_the_future table.planning {
 	width: 100%;
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 	margin-top: .4rem;
 	padding-top: .5rem;
 	padding-bottom: 0;
@@ -464,11 +464,11 @@ ul.back_to_the_future {
 	padding-top: .3rem;
 }
 .back_to_the_future li .todo .more ul li .ok {
-	color: rgba(18,132,255,1);
+	color: #0076ff;
 }
 .back_to_the_future li .todo .more ul li .ok:hover {
 	color: #fff;
-	background-color: rgba(18,132,255,1);
+	background-color: #0076ff;
 }
 #first_decal_compte {
 	border-top: 1px solid #ff3824;
