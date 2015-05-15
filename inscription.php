@@ -55,6 +55,9 @@ if($_POST) {
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
+    <meta name="author" content="Tiby Voesters"/>
+    <meta name="description" content="La web-application Yeti, Pour vous aider à organiser vos journées."/>
+    <meta name="keywords" content="tiby,voesters,web-app,dwm,production,mobile,organisation,étudiant,étudiants,beta,tfe"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <link rel="icon" href="img/icon_app.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>

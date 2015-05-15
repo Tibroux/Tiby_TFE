@@ -107,10 +107,10 @@ li.back a {
 }
 li.back a img, li.today a img {
 	width: 1.2rem;
-	height: 1.4rem;
+	height: 1.2rem;
 	position: relative;
-	top: .2rem;
-	margin: 0 1% 0 7%;
+	top: .15rem;
+	margin: 0 -1% 0 7%;
 }
 li.today a img {
 	margin: 0 7% 0 1%;
@@ -402,19 +402,24 @@ form.more ul {
 	top: -2px;
 }
 .more ul li input.add {
-	width: 67%;
+	width: 53%;
 	margin-top: .35rem;
+	margin-left: .3rem;
+}
+input.hour {
+	width: 30%;
 }
 .more ul li input.ok {
 	color: #54c7fc;
 	background-color: #fff;
 	font-size: 1rem;
 	text-align: center;
-	width: 3.35rem;
+	width: 3rem;
 	height: 2.15rem;
 	border-radius: 5px;
 	cursor: pointer;
 	margin-top: 0;
+	margin-left: -1.49rem;
 	
 	transition: all ease .3s;
 }
@@ -483,9 +488,25 @@ form.connect fieldset ol li.decal {
 	/*border-radius: 150px;
 	-webkit-border-radius: 150px;*/
 }
+input[type="checkbox"] {
+	width: 1rem;
+	height: 1rem;
+	position: relative;
+	top: -.1rem;
+	/*border: 1px solid #b2b2b2;*/
+	background-color: #b2b2b2;
+	border-radius: 50%;
+}
+input[type="checkbox"]:checked {
+	/*border-color: #54c7fc;*/
+	background-color: #54c7fc;
+}
 label {
-	margin-left: 2.5rem;
+	margin-left: 1.5rem;
 	color: #8e8e93;
+}
+.time {
+	margin-right: .5rem;
 }
 .todo_right {
 	display: inline-block;
@@ -504,6 +525,8 @@ label {
 }
 input:checked ~ label {
 	color: #54c7fc;
+	text-decoration: line-through;
+	font-style: italic;
 }
 .area {
 	padding: .5rem 0 .5rem .5rem;
@@ -641,6 +664,8 @@ button {
 	padding-bottom: .3rem;
 	cursor: pointer;
 	outline: none;
+	position: relative;
+	top: .1rem;
 	
 	transition: all ease .3s;
 }

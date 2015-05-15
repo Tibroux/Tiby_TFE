@@ -17,7 +17,7 @@ $usernamedb=$u->fetchAll(PDO::FETCH_ASSOC);
 // la semaine de l'utilisateur dans la DB
 //var_dump($_SESSION);
 //var_dump($usernamedb);
-$sql= "SELECT tasks.id,tasks.checked,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
+$sql= "SELECT tasks.id,tasks.checked,tasks.hour,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
 //echo $sql;
 
 $q =  $dbh ->prepare($sql);
@@ -39,6 +39,9 @@ exit;*/
 <head>
     <meta charset="UTF-8"/>
     <title>Semaine</title>
+    <meta name="author" content="Tiby Voesters"/>
+    <meta name="description" content="La web-application Yeti, Pour vous aider à organiser vos journées."/>
+    <meta name="keywords" content="tiby,voesters,web-app,dwm,production,mobile,organisation,étudiant,étudiants,beta,tfe"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <link rel="icon" href="img/icon_app.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -54,9 +57,9 @@ exit;*/
 	<div id="semaine" class="container">
 		<header class="phone">
 			<ul class="exception">
-				<li class="back"><a href="mois.php"><img src="#" alt="retour">Mai</a></li>
+				<li class="back"><a href="mois.php"><img src="img/back_icon.png" alt="retour">Mai</a></li>
 				<li><h1 class="space"><?php echo $usernamedb[0]['username'] ?></h1></li>
-				<li class="parameter"><a href="reglages.php"><img src="#" alt="paramètres"></a></li>
+				<li class="parameter"><a href="reglages.php"><img src="img/param_icon.png" alt="paramètres"></a></li>
 			</ul>
 			<ul class="champs">
 				<li class="section_search">
@@ -130,12 +133,12 @@ exit;*/
 						foreach ($tasks as $keys=>$t){
 	?>
 						
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><?php echo $t['task']; ?></label><button data-id="<?php echo $t['id']; ?>">-</button></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><span class="time"><?php echo $t['hour']; ?></span><?php echo $t['task']; ?></label><button data-id="<?php echo $t['id']; ?>">-</button></li>
 							<?php } ?>
 						</ul>
 						<form class="more" method="post" action="post_task.php">
 							<ul>
-								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="time"/><input class="ok" type="submit" value="OK"/></li>
 							</ul>
 						</form>
 					</div>
