@@ -10,7 +10,7 @@ if($_SESSION['logged_in'] != 'ok') {
 }
 // date
 //$yesterday = mktime(0, 0, 0, date("m") , date("d")-1, date("Y")); /* Voir pour le afficher le jour en moins... */
-$yesterday = date('d F Y');
+$yesterday = date(('d F Y') -d);
 $today = date('l d F Y');
 $tomorrow = date('l d F Y');
 // nom d'utilisateur
