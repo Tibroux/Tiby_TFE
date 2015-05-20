@@ -152,7 +152,7 @@ exit;*/
 						</ul>
 						<form class="more" method="post" action="post_task.php">
 							<ul>
-								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="time"/><input class="ok" type="submit" value="OK"/></li>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="datetime"/><input class="ok" type="submit" value="OK"/></li>
 							</ul>
 						</form>
 					</div>
