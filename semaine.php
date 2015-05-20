@@ -78,7 +78,7 @@ exit;*/
 			<ul class="champs">
 				<li class="section_search">
 				<img class="search_logo" src="img/search_icon.png" alt="search_logo"/>
-				<input id="search" name="search" type="text" placeholder="Rechercher"/>
+				<input id="search" name="search" type="search" placeholder="Rechercher"/>
 				</li>
 			</ul>
 		</header>
@@ -152,7 +152,7 @@ exit;*/
 						</ul>
 						<form class="more" method="post" action="post_task.php">
 							<ul>
-								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="datetime"/><input class="ok" type="submit" value="OK"/></li>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="datetime" placeholder="--:--"/><input class="ok" type="submit" value="OK"/></li>
 							</ul>
 						</form>
 					</div>
