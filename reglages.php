@@ -20,7 +20,7 @@
 	<div class="container">
 		<header class="phone">
 			<ul class="salo">
-				<li class="back"><a href="semaine.php"><img src="#" alt="retour">Aujourd'hui</a></li>
+				<li class="back"><a href="semaine.php"><img src="img/back_icon.png" alt="retour">Préc.</a></li>
 				<li><h1 class="space">Réglages</h1></li>
 			</ul>
 		</header>
@@ -74,14 +74,14 @@
 						<label class="disappear" for="confirm_password">Confirmer le mot de passe</label>
 						<input id="confirm_password" class="area" name="confirm_password" type="text" placeholder="Confirmer le mot de passe..."/>
 						</li>
-						<li class="simule">
+						<!--<li class="simule">
 						<input id="localisation" name="localisation" type="checkbox"/>
 						<label for="localisation">Localisation</label>
 						</li>
 						<li id="last_compte" class="simule">
 						<input id="notifications" name="notifications" type="checkbox"/>
 						<label for="notifications">Notifications</label>
-						</li>
+						</li>-->
 						<li class="confirm_btn_bottom"><input id="confirm_bottom" name="confirm_bottom" type="submit" value="Confirmer"/></li>
 					</ol>
 				</fieldset>

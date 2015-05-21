@@ -103,13 +103,19 @@ exit;*/
 				</li>
 			</ul>-->
 			<ul class="past_day">
-				<li>
+				<li class="day">
 					<h3 class="date"><?php echo $yesterday; ?></h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
 					</table>
 				</li>
+				<div class="todo">
+					<h3>Tâches en retard : <span>1</span></h3>
+					<ul class="past_adjust">
+						<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut"><span class="time"><?php echo date('H:i', strtotime($t['hour'])); ?></span>Tâche en retard</label><button>-</button></li>
+					</ul>
+				</div>
 			</ul>
 			<ul class="active_day">
 				<li>
@@ -128,9 +134,9 @@ exit;*/
 							<td class="tab_right_split"></td>
 						</tr>
 						<tr>
-							<td class="tab_left">9:15</td>
-							<td class="double_line">Présentation Bêta<br/><span class="prof">3 Pokémons</span></td>
-							<td class="tab_right">A79</td>
+							<td class="tab_left">15:50</td>
+							<td class="double_line">TP<br/><span class="prof">Mr.Bourgaux</span></td>
+							<td class="tab_right"></td>
 						</tr>
 						<tr>
 							<td class="tab_left_split"></td>
@@ -141,7 +147,7 @@ exit;*/
 				</li>
 				<li>
 					<div class="todo">
-						<h3>Tâches du jour :</h3>
+						<h3>Tâches du jour : 10</h3>
 						<ul>
 						<?php
 						foreach ($tasks as $keys=>$t){
@@ -170,7 +176,7 @@ exit;*/
 				<div class="todo">
 					<h3>Tâches du jour :</h3>
 						<ul class="future_adjust">
-							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">JPO</label><button>-</button></li>
+							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">Boire du café</label><button>-</button></li>
 						</ul>
 						<form class="more">
 							<ul>
@@ -187,9 +193,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>10:00</td>
-							<td>Gueule de bois</td>
-							<td class="tab_right">Vomi</td>
+							<td>09:30</td>
+							<td>Courbatures</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
@@ -213,9 +219,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>13:30</td>
+							<td>15:30</td>
 							<td>Mortal Kombat</td>
-							<td class="tab_right">Scorpion</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
@@ -239,9 +245,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>13:30</td>
+							<td>15:30</td>
 							<td>Mortal Kombat</td>
-							<td class="tab_right">Scorpion</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
@@ -265,9 +271,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>13:30</td>
-							<td>Mortal Kombat</td>
-							<td class="tab_right">Scorpion</td>
+							<td>15:30</td>
+							<td>Destiny</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
@@ -291,9 +297,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>13:30</td>
-							<td>Mortal Kombat</td>
-							<td class="tab_right">Scorpion</td>
+							<td>17:30</td>
+							<td>Destiny</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
@@ -317,9 +323,9 @@ exit;*/
 				<li>
 					<table class="planning">
 						<tr>
-							<td>13:30</td>
-							<td>Mortal Kombat</td>
-							<td class="tab_right">Scorpion</td>
+							<td>21:30</td>
+							<td>Sims</td>
+							<td class="tab_right">Domicile</td>
 						</tr>
 					</table>
 				</li>
