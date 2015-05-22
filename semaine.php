@@ -1,5 +1,6 @@
 <?php
 require_once('config.inc.php');
+require_once('trad.inc.php');
 
 //setlocale(LC_ALL, 'fr_FR');
 
@@ -12,16 +13,24 @@ if($_SESSION['logged_in'] != 'ok') {
 	exit;
 }
 // date
-//$yesterday = mktime(0, 0, 0, date("m") , date("d")-1, date("Y")); /* Voir pour le afficher le jour en moins... */
-$yesterday = date('l d F Y', strtotime("-1 day"));
-$today = date('l d F Y');
-$tomorrow = date('l d F Y', strtotime("+1 day"));
-$twodays = date('l d F Y', strtotime("+2 days"));
-$threedays = date('l d F Y', strtotime("+3 days"));
-$fourdays = date('l d F Y', strtotime("+4 days"));
-$fivedays = date('l d F Y', strtotime("+5 days"));
-$sixdays = date('l d F Y', strtotime("+6 days"));
-$sevendays = date('l d F Y', strtotime("+7 days"));
+$yesterday = "$daybefore $daynumbefore $month $year";
+//$yesterday = date('l d F Y', strtotime("-1 day"));
+$today = "$day $daynum $month $year";
+//$today = date('l d F Y');
+$tomorrow = "$dayafterone $daynumafterone $month $year";
+//$tomorrow = date('l d F Y', strtotime("+1 day"));
+$twodays = "$dayaftertwo $daynumaftertwo $month $year";
+//$twodays = date('l d F Y', strtotime("+2 days"));
+$threedays = "$dayafterthree $daynumafterthree $month $year";
+//$threedays = date('l d F Y', strtotime("+3 days"));
+$fourdays = "$dayafterfour $daynumafterfour $month $year";
+//$fourdays = date('l d F Y', strtotime("+4 days"));
+$fivedays = "$dayafterfive $daynumafterfive $month $year";
+//$fivedays = date('l d F Y', strtotime("+5 days"));
+$sixdays = "$dayaftersix $daynumaftersix $month $year";
+//$sixdays = date('l d F Y', strtotime("+6 days"));
+$sevendays = "$dayafterseven $daynumafterseven $month $year";
+//$sevendays = date('l d F Y', strtotime("+7 days"));
 // nom d'utilisateur
 $name= "SELECT * FROM users WHERE id=:id;";
 $u=$dbh->prepare($name);
@@ -104,6 +113,7 @@ exit;*/
 			</ul>-->
 			<ul class="past_day">
 				<li class="day">
+					<!--<h3 class="date"><?php //echo $today(strtotime('-1 day')); ?></h3>-->
 					<h3 class="date"><?php echo $yesterday; ?></h3>
 				</li>
 				<li class="disappear">

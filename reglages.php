@@ -31,16 +31,16 @@
 					<legend>Synchronisation</legend>
 					<ol>
 						<li id="first_decal_synchro" class="decal">
-						<input id="ical" name="ical" type="checkbox"/>
-						<label for="ical">iCal</label>
+						<input id="ical" class="synchronisor" name="ical" type="checkbox"/>
+						<label class="synchronisor" for="ical">iCal</label>
 						</li>
 						<li class="decal">
-						<input id="googlecal" name="googlecal" type="checkbox"/>
-						<label for="googlecal">Google Calendar</label>
+						<input id="googlecal" class="synchronisor" name="googlecal" type="checkbox"/>
+						<label class="synchronisor" for="googlecal">Google Calendar</label>
 						</li>
 						<li class="decal">
-						<input id="extranet" name="extranet" type="checkbox" checked/>
-						<label for="extranet">Extranet Étudiant</label>
+						<input id="extranet" class="synchronisor" name="extranet" type="checkbox" checked/>
+						<label class="synchronisor" for="extranet">Extranet Étudiant</label>
 						<ol>
 							<li>
 							<label class="disappear" for="link_extranet">Lien extranet</label>

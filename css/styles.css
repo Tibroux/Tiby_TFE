@@ -238,6 +238,7 @@ ul.past_day li h3 {
 }
 ul.past_day div.todo ul.past_adjust li {
 	padding-bottom: .15rem;
+	border-bottom: none;
 }
 form, .active_day {
 	width: 91%;
@@ -535,6 +536,10 @@ input:checked ~ label {
 	color: #54c7fc;
 	text-decoration: line-through;
 	font-style: italic;
+}
+input.synchronisor:checked ~ label.synchronisor {
+	text-decoration: none;
+	font-style: normal;
 }
 .area {
 	padding: .5rem 0 .5rem .5rem;
