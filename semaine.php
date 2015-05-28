@@ -2,7 +2,17 @@
 require_once('config.inc.php');
 require_once('trad.inc.php');
 
-//setlocale(LC_ALL, 'fr_FR');
+/*
+
+$extranet = var_dump(is_dir(link('http://extranet.infographie-sup.be/ics/3TID2.ics')));
+
+if(isset($extranet));
+
+//http://extranet.infographie-sup.be/ics/3TID2.ics       extranet
+
+SELECT * FROM events WHERE date >=CURDATE() AND date <= "2015-05-27 00:00:00"
+
+*/
 
 // vérifier s'il est loggué
 //echo '<pre>';
@@ -40,7 +50,7 @@ $usernamedb=$u->fetchAll(PDO::FETCH_ASSOC);
 // la semaine de l'utilisateur dans la DB
 //var_dump($_SESSION);
 //var_dump($usernamedb);
-$sql= "SELECT tasks.id,tasks.checked,tasks.hour,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
+$sql= "SELECT tasks.id,tasks.checked,tasks.datetask,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
 //echo $sql;
 
 $q =  $dbh ->prepare($sql);
@@ -81,15 +91,33 @@ exit;*/
 		<header class="phone">
 			<ul class="exception">
 				<li class="back"><!--<a href="mois.php"><img src="img/back_icon.png" alt="retour">Mai</a>--></li>
-				<li><h1 class="space"><?php echo $usernamedb[0]['username'] ?></h1></li>
+				<!--<li><h1 class="space"><?php //echo $usernamedb[0]['username'] ?></h1></li>-->
+				<li><h1 class="space">YETI</h1></li>
 				<li class="parameter"><a href="reglages.php"><img src="img/param_icon.png" alt="paramètres"></a></li>
 			</ul>
-			<ul class="champs">
-				<li class="section_search">
-				<img class="search_logo" src="img/search_icon.png" alt="search_logo"/>
-				<input id="search" name="search" type="search" placeholder="Rechercher"/>
+			<ul class="closer">
+				<li class="harvey">
+					<ul>
+						<li class="icon_search"><button><img class="search_logo" src="img/search_blueicon.png" alt="search_logo"/></button></li>
+						<li class="adder"><a href="#">+</a></li>
+					</ul>
+				</li>
+				<li class="disappear">
+					<ul>
+						<li class="section_search">
+						<img class="search_logo" src="img/search_icon.png" alt="search_logo"/>
+						<input id="search" name="search" type="search" placeholder="Rechercher"/>
+						</li>
+					</ul>
 				</li>
 			</ul>
+			<!--<form class="more" method="post" action="post_task.php">
+							<ul class="general">
+								<li><input class="addnow" name="addnow" type="text" placeholder="Ajouter une tâche..."/>
+								</li>
+								<li><input class="dateadd" name="dateadd" type="date"/><input class="hour" name="hour" type="time" placeholder="--:--"/><input class="oknow" type="submit" value="OK"/></li>
+							</ul>
+						</form>-->
 		</header>
 		<div class="content">
 			<div class="phone">
@@ -111,10 +139,10 @@ exit;*/
 					</table>
 				</li>
 			</ul>-->
-			<ul class="past_day">
+			<!--<ul class="past_day">
 				<li class="day">
-					<!--<h3 class="date"><?php //echo $today(strtotime('-1 day')); ?></h3>-->
-					<h3 class="date"><?php echo $yesterday; ?></h3>
+					<h3 class="date"><?php //echo $today(strtotime('-1 day')); ?></h3>
+					<h3 class="date"><?php //echo $yesterday; ?></h3>
 				</li>
 				<li class="disappear">
 					<table class="planning">
@@ -122,17 +150,56 @@ exit;*/
 				</li>
 				<div class="todo">
 					<h3>Tâches en retard : <span>1</span></h3>
-					<ul class="past_adjust">
-						<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut"><span class="time"><?php echo date('H:i', strtotime($t['hour'])); ?></span>Tâche en retard</label><button>-</button></li>
-					</ul>
+					<form class="updatenow" action="" method="post">
+						<ul class="past_adjust">
+							<li>
+								<ul class="paster">
+									<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut"><span class="time"><?php //echo date('H:i', strtotime($t['hour'])); ?></span>Tâche en retard</label><button class="supp">-</button></li>
+								</ul>-->
+							</li>
+							<!--<li>
+								<ul class="pimper">
+									<li><img src="#" alt="icône de modification"/></li>
+									<li><textarea name="task_update" id="task_update" placeholder="Modifier la tâche...">Tâche en retard</textarea></li>
+									<li><input class="dateadd" name="dateadd" type="date"/><input class="hour" name="hour" type="time" placeholder="--:--"/></li>
+									<li><input class="confirm_now" type="submit" value="Confirmer"/></li>
+									<li><button class="supp" data-id="<?php// echo $t['id']; ?>">Supprimer la tâche</button></li>
+								</ul>
+							</li>-->
+						</ul>
+					</form>
 				</div>
 			</ul>
 			<ul class="active_day">
 				<li>
-					<h3 class="date"><?php echo $today; ?></h3>
+					<h3 class="date"><?php echo $today; ?><span>(Aujourd'hui)</span></h3>
 				</li>
 				<li>
-					<table class="planning">
+					<ul class="planning">
+						<li class="wafel">
+							<ul>
+								<li class="clock">08:10</li>
+								<li>
+									<ul class="event">
+										<li class="rdv">Aller au Starbucks</li>
+										<li class="localisation">Gare</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="wafel">
+							<ul>
+								<li class="clock">10:40</li>
+								<li>
+									<ul class="event">
+										<li class="rdv">TP Bourgaux</li>
+										<li class="localisation">C214</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--<table class="planning">
 						<tr>
 							<td class="tab_left">08:10</td>
 							<td class="double_line">Aller au Starbucks<br/><span class="prof"></span></td>
@@ -153,22 +220,22 @@ exit;*/
 							<td class="tab_split"></td>
 							<td class="tab_right_split"></td>
 						</tr>
-					</table>
+					</table>-->
 				</li>
 				<li>
 					<div class="todo">
-						<h3>Tâches du jour : 10</h3>
+						<h3>Tâches<span class="compteur">(<?php echo '10' ?>)</span></h3>
 						<ul>
 						<?php
 						foreach ($tasks as $keys=>$t){
 	?>
 						
-							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><span class="time"><?php echo date('H:i', strtotime($t['hour'])); ?></span><?php echo $t['task']; ?></label><button data-id="<?php echo $t['id']; ?>">-</button></li>
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><!--<span class="time"><?php //echo date('H:i', strtotime($t['hour'])); ?></span>--><?php echo $t['task']; ?></label><button class="supp" data-id="<?php echo $t['id']; ?>">-</button></li>
 							<?php } ?>
 						</ul>
 						<form class="more" method="post" action="post_task.php">
 							<ul>
-								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="hour" name="hour" type="datetime" placeholder="--:--"/><input class="ok" type="submit" value="OK"/></li>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><!--<input class="hour" name="hour" type="datetime" placeholder="--:--"/>--><input class="ok" type="submit" value="OK"/></li>
 							</ul>
 						</form>
 					</div>
@@ -186,7 +253,7 @@ exit;*/
 				<div class="todo">
 					<h3>Tâches du jour :</h3>
 						<ul class="future_adjust">
-							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">Boire du café</label><button>-</button></li>
+							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">Boire du café</label><button class="supp">-</button></li>
 						</ul>
 						<form class="more">
 							<ul>

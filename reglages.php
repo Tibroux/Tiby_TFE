@@ -20,7 +20,7 @@
 	<div class="container">
 		<header class="phone">
 			<ul class="salo">
-				<li class="back"><a href="semaine.php"><img src="img/back_icon.png" alt="retour">Préc.</a></li>
+				<li class="back"><a href="semaine.php"><img src="img/back_icon.png" alt="retour"/></a></li>
 				<li><h1 class="space">Réglages</h1></li>
 			</ul>
 		</header>

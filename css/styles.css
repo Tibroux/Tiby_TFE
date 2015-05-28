@@ -35,22 +35,12 @@ body {
 	width: 1.2rem;
 	height: 1.2rem;
 	position: relative;
-	top: .2rem;
-}
-#semaine .content div.phone {
-	/*height: 430px;*/
-	padding-top: 0;
-}
-#mois .content div.phone {
-	height: 415px;
-	padding-top: 1rem;
-}
-#mois header.phone {
-	padding-top: .6rem;
+	top: .1rem;
 }
 header {
 	width: 100%;
 	background-color: #f8f9f9;
+	border-bottom: 1px solid #b2b2b2;
 }
 header ul {
 	/*width: 320px;*/
@@ -70,11 +60,12 @@ header ul {
 }
 header ul li {
 	display: inline-block;
-	width: 32%;
+	width: 31.6%;
 	text-align: center;
 }
 .content {
 	width: 100%;
+	margin-top: .9rem;
 }
 header.phone {
 	/*margin-top: 1.4rem;*/
@@ -87,7 +78,7 @@ header.phone {
 div.phone {
 	/*height: 472px;
 	overflow-y: scroll;*/
-	padding-top: 1.4rem;
+	/*padding-top: 1.4rem;*/
 }
 input, textarea, input[type="submit"] {
 	-webkit-appearance: none;
@@ -97,7 +88,7 @@ input {
 	cursor: pointer;
 }
 li.back {
-	/*width: 33%;*/
+	width: 33%;
 	text-align: left;
 	margin-left: .4rem;
 	padding-top: .55rem;
@@ -138,7 +129,8 @@ h1 a {
 	color: #ff3824;
 }
 h1.space {
-	/*left: .4rem;*/
+	position: relative;
+	left: -.45rem;
 }
 li.confirm_btn, li.more, li.today {
 	width: 39%;
@@ -191,10 +183,6 @@ li#var1 {
 ol, ul {
 	list-style: none;
 }
-ul.champs {
-	background-color: #f8f9f9;
-	width: 100%;
-}
 li.section_search {
 	border-radius: 5px;
 	display: block;
@@ -212,7 +200,7 @@ li.section_search {
 #search {
 	outline: none;
 	border: none;
-	font-size: 1rem;
+	font-size: .9rem;
 	position: relative;
 	top: -.15rem;
 	width: 90%;
@@ -250,7 +238,7 @@ form, .active_day {
 	margin: 0 auto;
 }
 form.synchro, .active_day {
-	border: 2px solid #54c7fc;
+	border: 2px solid #0076ff;
 }
 .active_day {
 	left: 0;
@@ -266,12 +254,12 @@ fieldset {
 legend, h4, .active_day li h3.date, .back_to_the_future li h3.date {
 	/*width: 91%;
 	text-align: left;*/
-	margin-left: 3%;
-	padding: .7rem 0;
+	margin-left: 1rem;
+	padding: .7rem 0 .6rem;
 	font-size: 1rem;
 }
 .mai2015, .juin2015 {
-	border: 2px solid #54c7fc;
+	border: 2px solid #0076ff;
 	border-radius: 5px;
 	width: 90%;
 	margin: auto;
@@ -286,7 +274,7 @@ h4 {
 	font-weight: 100;
 }
 .mai2015 h4 {
-	color: #54c7fc;
+	color: #0076ff;
 }
 .juin2015 h4 {
 	color: #0076ff;
@@ -295,7 +283,7 @@ h4 {
 	width: 92%;
 	display: inline-block;
 	text-align: center;
-	border-top: 1px solid #54c7fc;
+	border-top: 1px solid #0076ff;
 	padding-top: .5rem;
 	padding-left: .75rem;
 	padding-right: .75rem;
@@ -311,10 +299,13 @@ h4 {
 }
 .active_day li h3.date {
 	font-weight: 100;
-	font-size: 1.15rem;
+}
+.active_day li h3.date span {
+	float: right;
+	padding-right: 1rem;
 }
 form.synchro fieldset legend, .active_day li h3.date {
-	color: #54c7fc;
+	color: #0076ff;
 }
 form.compte fieldset legend {
 	color: #ff3824;
@@ -323,34 +314,55 @@ form fieldset ol {
 	width: 100%;
 }
 #first_decal_synchro {
-	border-top: 1px solid #54c7fc;
+	border-top: 1px solid #0076ff;
 	width: 96%;
 }
-.active_day li table.planning {
-	border-top: 1px solid #54c7fc;
+/*.active_day li table.planning {
+	border-top: 1px solid #0076ff;
 	width: 100%;
 }
-table tr td{
-	/*display: inline-block;*/
-	/*width: 15.45%;*/
+table tr td {
 	width: 35px;
 	height: 35px;
 }
 td.tab_left {
-	border-right: 1px solid #54c7fc;
+	border-right: 1px solid #0076ff;
 	text-align: center;
 	width: 55px;
 }
 td.tab_right {
-	border-left: 1px solid #54c7fc;
+	border-left: 1px solid #0076ff;
 	padding-left: .4rem;
+}*/
+.planning {
+	/*border-bottom: 1px solid #0076ff;*/
+	border-top: 1px solid #0076ff;
+	/*padding-bottom: 1.4rem;*/
+	color: #0076ff;
 }
-table.planning {
-	border-bottom: 1px solid #54c7fc;
-	padding-bottom: 1.4rem;
-	color: #54c7fc;
+.wafel {
+	border-bottom: 1px solid #0076ff;
 }
-td.double_line {
+.clock {
+	width: 4.2rem;
+	font-size: .9rem;
+	text-align: center;
+	float: left;
+	padding-top: .3rem;
+}
+.event {
+	border-left: 1px solid #0076ff;
+	padding: .3rem .5rem;
+	display: inline-block;
+}
+.rdv {
+	font-size: .9rem;
+	font-weight: 500;
+}
+.localisation {
+	font-size: .8rem;
+}
+/*td.double_line {
 	position: relative;
 	top: .7rem;
 	width: auto;
@@ -361,46 +373,51 @@ td.tab_split {
 }
 td.tab_left_split {
 	height: 1.6rem;
-	border-right: 1px solid #54c7fc;
+	border-right: 1px solid #0076ff;
 	border-bottom: 1px solid #8e8e93;
 	color: #8e8e93;
 	text-align: center;
 }
 td.tab_right_split {
 	height: 1.6rem;
-	border-left: 1px solid #54c7fc;
+	border-left: 1px solid #0076ff;
 	border-bottom: 1px solid #8e8e93;
 	padding-right: 1.5rem;
-}
+}*/
 .todo {
 	width: 100%;
 }
 .todo h3 {
-	margin-left: 3%;
+	margin-left: 1rem;
 	padding: .6rem 0;
 	font-weight: 100;
 	color: #8e8e93;
-	font-size: 1.15rem;
+	font-size: 1rem;
+}
+.compteur {
+	margin-left: .5rem;
 }
 .todo ul {
 	border-top: 1px solid #8e8e93;
+	font-size: .9rem;
 }
 form.more ul {
 	border-top: 0;
 }
 .todo ul li {
 	border-bottom: 1px solid #8e8e93;
-	min-height: 2.2rem;
+	min-height: 2.1rem;
 	padding-top: .6rem;
 }
 .todo ul li input {
-	border: none;
-	color: #8e8e93;
-	font-size: .95rem;
+	border: 1px solid #8e8e93;
+	/*color: #8e8e93;*/
+	/*font-size: .95rem;*/
 	outline: none;
-	margin-left: 1rem;
+	margin-left: 1.6rem;
 	margin-top: .4rem;
 	float: left;
+	background-color: #fff;
 }
 .more ul li {
 	border: none;
@@ -411,17 +428,19 @@ form.more ul {
 	top: -2px;
 }
 .more ul li input.add {
-	width: 53%;
-	margin-top: .35rem;
+	width: 88%;
+	/*margin-top: .35rem;*/
 	margin-left: .3rem;
+	font-size: .9rem;
+	border: none;
 }
 input.hour {
 	width: 30%;
 }
 .more ul li input.ok {
-	color: #54c7fc;
-	background-color: #fff;
-	font-size: 1rem;
+	color: #0076ff;
+	/*background-color: #fff;*/
+	font-size: .8rem;
 	text-align: center;
 	width: 3rem;
 	height: 2.15rem;
@@ -429,12 +448,14 @@ input.hour {
 	cursor: pointer;
 	margin-top: 0;
 	margin-left: -1.49rem;
+	top: -3px;
+	border-color: #0076ff;
 	
 	transition: all ease .3s;
 }
 .more ul li input.ok:hover {
 	color: #fff;
-	background-color: #54c7fc;
+	background-color: #0076ff;
 	
 	transition: all ease .3s;
 }
@@ -474,6 +495,7 @@ ul.back_to_the_future {
 }
 .back_to_the_future li .todo .more ul li .ok {
 	color: #0076ff;
+	border-color: #0076ff;
 }
 .back_to_the_future li .todo .more ul li .ok:hover {
 	color: #fff;
@@ -503,12 +525,12 @@ input[type="checkbox"] {
 	position: relative;
 	top: -.1rem;
 	/*border: 1px solid #b2b2b2;*/
-	background-color: #b2b2b2;
+	/*background-color: #b2b2b2;*/
 	border-radius: 50%;
 }
 input[type="checkbox"]:checked {
-	/*border-color: #54c7fc;*/
-	background-color: #54c7fc;
+	/*border-color: #0076ff;*/
+	background-color: #0076ff;
 }
 label {
 	margin-left: 1.5rem;
@@ -519,7 +541,8 @@ label {
 }
 .todo_right {
 	display: inline-block;
-	width: 60%;
+	width: 58.8%;
+	margin-left: 2.1rem;
 	margin-right: .6rem;
 }
 .disappear {
@@ -530,10 +553,10 @@ label {
 	margin-top: .5rem;
 	width: 70%;
 	margin-bottom: 1rem;
-	border: 1px solid #54c7fc;
+	border: 1px solid #0076ff;
 }
 input:checked ~ label {
-	color: #54c7fc;
+	color: #0076ff;
 	text-decoration: line-through;
 	font-style: italic;
 }
@@ -572,7 +595,7 @@ li.simule input:checked ~ label {
 	transition: color ease .3s;
 }
 .moit:hover label {
-	color: #54c7fc;
+	color: #0076ff;
 	
 	transition: color ease .3s;
 }
@@ -586,7 +609,7 @@ li.simule input:checked ~ label {
 	transition: color ease .3s;
 }
 .moit:hover a {
-	color: #54c7fc;
+	color: #0076ff;
 	
 	transition: color ease .3s;
 }
@@ -599,12 +622,12 @@ li.simule input:checked ~ label {
 	text-align: center;
 }
 #connexion {
-	border: 1px solid #54c7fc;
+	border: 1px solid #0076ff;
 	background-color: #fff;
 	text-align: center;
 	width: 96.5%;
 	font-size: 1rem;
-	color: #54c7fc;
+	color: #0076ff;
 	padding: .4rem 0;
 	margin-top: 1rem;
 	border-radius: 5px;
@@ -614,7 +637,7 @@ li.simule input:checked ~ label {
 }
 #connexion:hover {
 	color: #fff;
-	background-color: #54c7fc;
+	background-color: #0076ff;
 	
 	transition: all ease .3s;
 }
@@ -641,12 +664,13 @@ a.more {
 	box-shadow: 1px 1px 5px #b2b2b2;
 }
 .balibalo {
-	background-color: #54c7fc;
+	background-color: #0076ff;
 	border-bottom: none;
 	padding-bottom: .45rem;
 }
 .salo {
 	padding-top: .6rem;
+	border: none;
 }
 .name_app {
 	width: 100%;
@@ -662,9 +686,9 @@ a.more {
 .prof {
 	color: #8e8e93;
 }
-button {
-	width: 1.4rem;
-	height: 1.4rem;
+button.supp {
+	width: 1.2rem;
+	height: 1.2rem;
 	/*float: right;
 	margin-right: 5%;*/
 	border: 1px solid #FF4940;
@@ -678,13 +702,127 @@ button {
 	cursor: pointer;
 	outline: none;
 	position: relative;
-	top: .1rem;
+	top: .175rem;
+	margin-bottom: 1rem;
 	
 	transition: all ease .3s;
 }
-button:hover {
+button.supp:hover {
 	background-color: #FF4940;
 	color: #fff;
 	
 	transition: all ease .3s;
+}
+.general {
+	border: none;
+	padding-bottom: .5rem;
+}
+.general li {
+	width: 100%;
+}
+.general li input.addnow {
+	width: 99%;
+	height: 2.4rem;
+	border: none;
+	padding-left: .5rem;
+	position: relative;
+	left: -.15rem;
+	border-radius: 5px;
+	font-size: 1rem;
+	margin-top: .8rem;
+}
+.general li input.dateadd {
+	width: 45%;
+	height: 2.4rem;
+	border: none;
+	border-radius: 5px;
+	margin-top: .5rem;
+	padding-left: .5rem;
+	left: -.15rem;
+}
+.general li input.hour {
+	width: 22%;
+	text-align: center;
+	height: 2.4rem;
+	margin-left: .5rem;
+	padding-left: 1.5rem;
+	border: none;
+	border-radius: 5px;
+}
+.general li input.oknow {
+	color: #0076ff;
+	background-color: #fff;
+	font-size: 1rem;
+	text-align: center;
+	width: 3rem;
+	height: 2.45rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: .5rem;
+	top: .05rem;
+	left: .15rem;
+
+	transition: all ease .3s;
+}
+form.updatenow {
+	width: 100%;
+}
+ul.paster, ul.pimper {
+	border-top: none;
+}
+ul.paster li {
+	padding-top: .2rem;
+}
+ul.pimper li img {
+	width: 100%;
+	height: 20px;
+}
+li.harvey {
+	width: 100%;
+}
+li.harvey ul {
+	width: 100%;
+	height: 2.4rem;
+	padding-bottom: 0;
+	text-align: center;
+	border-bottom: none;
+}
+li.icon_search {
+	width: 49.3%;
+}
+li.icon_search button {
+	width: 100%;
+	height: 2.4rem;
+	background-color: #f8f9f9;
+	border: none;
+	cursor: pointer;
+}
+li.adder {
+	width: 49%;
+	height: 2.4rem;
+	padding-top: 1px;
+	border-left: 1px solid #8e8e93;
+}
+li.adder a {
+	width: 100%;
+	height: 2.45rem;
+	position: relative;
+	top: -.05rem;
+	text-decoration: none;
+	font-size: 1.75rem;
+	color: #0076ff;
+	display: block;
+}
+li.champs {
+	background-color: #f8f9f9;
+	width: 100%;
+	border-top: 1px solid #b2b2b2;
+}
+li.champs ul {
+	border-bottom: none;
+}
+ul.closer {
+	padding-bottom: 0;
+	border-bottom: none;
 }
