@@ -5,7 +5,7 @@ Travail de fin d'étude axé sur une web-application où l'utilisateur sera amen
 ESIAJ - [DWM](https://dwm.re/) 2015.
 
 
-# Crédits
+### Crédits
 
 * [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js)
 
