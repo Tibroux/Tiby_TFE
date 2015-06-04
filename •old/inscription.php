@@ -7,15 +7,11 @@ function is_valid_email($email) {
 
 $errors="";
 
-/*$password = strip_tags(trim($_POST['password']));
-md5($password);*/
-
 //form processing
 if($_POST) {
 	// nettoyage
 	$username = strip_tags(trim($_POST['username']));
 	$password = strip_tags(trim($_POST['password']));
-	$school = strip_tags(trim($_POST['school']));
 	$email = strip_tags(trim($_POST['email']));
 	$confirm_email = strip_tags(trim($_POST['confirm_email']));
 	
@@ -38,7 +34,6 @@ if($_POST) {
 			$preparedStatement = $dbh->prepare($query);
 			$preparedStatement->bindParam(":username", $username);
 			$preparedStatement->bindParam(":password", $password);
-			$preparedStatement->bindParam(":school", $school);
 			$preparedStatement->bindParam(":email", $email);
 			$preparedStatement->bindParam(":confirm_email", $confirm_email);
 			$preparedStatement->execute();

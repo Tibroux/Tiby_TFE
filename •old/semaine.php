@@ -342,6 +342,4 @@ exit;*/
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/autocomplete.js"></script>
 </html>
