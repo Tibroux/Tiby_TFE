@@ -57,19 +57,19 @@ $tasks = $q->fetchAll(PDO::FETCH_ASSOC);
 						<input id="ical" class="synchronisor" name="ical" type="checkbox"/>
 						<label class="synchronisor" for="ical">iCal</label>
 						<label class="disappear" for="link_ical">Lien iCal</label>
-						<input id="link_ical" class="area" name="link_ical" type="url" placeholder="Lien ics, rss, ..."/>
+						<input id="link_ical" class="area" name="link_ical" type="url" placeholder="Lien ics"/>
 						</li>
 						<li class="decal">
 						<input id="googlecal" class="synchronisor" name="googlecal" type="checkbox"/>
 						<label class="synchronisor" for="googlecal">Google Calendar</label>
 						<label class="disappear" for="link_google">Lien Google Calendar</label>
-						<input id="link_google" class="area" name="link_google" type="url" placeholder="Lien ics, rss, ..."/>
+						<input id="link_google" class="area" name="link_google" type="url" placeholder="Lien ics"/>
 						</li>
 						<li class="decal">
 						<input id="extranet" class="synchronisor" name="extranet" type="checkbox"/>
 						<label class="synchronisor" for="extranet">Autre</label>
 						<label class="disappear" for="link_extranet">Lien autre</label>
-							<input id="link_extranet" class="area" name="link_extranet" type="url" placeholder="Lien ics, rss, ..."/></li>
+							<input id="link_extranet" class="area" name="link_extranet" type="url" placeholder="Lien ics"/></li>
 						</li>
 					</ol>
 				</fieldset>

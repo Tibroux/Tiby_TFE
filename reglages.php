@@ -64,7 +64,7 @@ if($_POST)
 	}
 	
 	if(strlen($error) == 0)
-	{		
+	{
 		if(strlen($password)>0)
 		{
 			$sql = "UPDATE users SET users.username =:username, users.password=:password, users.email=:email, users.confirm_email=:confirm_email, users.ical=:ical, users.googlecal=:googlecal, users.other=:other WHERE id=:userID";
@@ -186,15 +186,15 @@ if($_POST)
 					<ol>
 						<li id="first_decal_synchro" class="decal">
 							<label class="synchronisor" for="ical">iCal</label>
-							<input id="ical" class="area" name="ical" type="url" placeholder="Lien ics, rss, ..." value="<?php if(strlen($user[0]['ical']) >0){echo $user[0]['ical'];} ?>" />
+							<input id="ical" class="area" name="ical" type="url" placeholder="Lien ics..." value="<?php if(strlen($user[0]['ical']) >0){echo $user[0]['ical'];} ?>" />
 						</li>
 						<li class="decal">
 							<label class="synchronisor" for="googlecal">Google Calendar</label>
-							<input id="googlecal" class="area" name="googlecal" type="url" placeholder="Lien ics, rss, ..." value="<?php if(strlen($user[0]['googlecal']) >0){echo $user[0]['googlecal'];} ?>"/>
+							<input id="googlecal" class="area" name="googlecal" type="url" placeholder="Lien ics..." value="<?php if(strlen($user[0]['googlecal']) >0){echo $user[0]['googlecal'];} ?>"/>
 						</li>
 						<li class="decal">
 							<label class="synchronisor" for="other">Autre</label>
-							<input id="other" class="area" name="other" type="url" placeholder="Lien ics, rss, ..." value="<?php if(strlen($user[0]['googlecal']) >0){echo $user[0]['googlecal'];} ?>"/>
+							<input id="other" class="area" name="other" type="url" placeholder="Lien ics..." value="<?php if(strlen($user[0]['googlecal']) >0){echo $user[0]['googlecal'];} ?>"/>
 						</li>
 					</ol>
 				</fieldset>
