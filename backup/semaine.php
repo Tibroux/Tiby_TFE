@@ -9,6 +9,8 @@ $extranet = var_dump(is_dir(link('http://extranet.infographie-sup.be/ics/3TID2.i
 
 if(isset($extranet));
 
+//http://extranet.infographie-sup.be/ics/3TID2.ics       extranet
+
 SELECT * FROM events WHERE date >=CURDATE() AND date <= "2015-05-27 00:00:00"
 
 */
@@ -23,6 +25,21 @@ if($_SESSION['logged_in'] != 'ok') {
 }
 // date
 $today = "$day $daynum $month $year";
+//$today = date('l d F Y');
+//$tomorrow = "$dayafterone $daynumafterone $month $year";
+//$tomorrow = date('l d F Y', strtotime("+1 day"));
+//$twodays = "$dayaftertwo $daynumaftertwo $month $year";
+//$twodays = date('l d F Y', strtotime("+2 days"));
+//$threedays = "$dayafterthree $daynumafterthree $month $year";
+//$threedays = date('l d F Y', strtotime("+3 days"));
+//$fourdays = "$dayafterfour $daynumafterfour $month $year";
+//$fourdays = date('l d F Y', strtotime("+4 days"));
+//$fivedays = "$dayafterfive $daynumafterfive $month $year";
+//$fivedays = date('l d F Y', strtotime("+5 days"));
+//$sixdays = "$dayaftersix $daynumaftersix $month $year";
+//$sixdays = date('l d F Y', strtotime("+6 days"));
+//$sevendays = "$dayafterseven $daynumafterseven $month $year";
+//$sevendays = date('l d F Y', strtotime("+7 days"));
 // nom d'utilisateur
 $name= "SELECT * FROM users WHERE id=:id;";
 $u=$dbh->prepare($name);
@@ -83,7 +100,7 @@ $uid_already_exist = array();
 				<li class="harvey">
 					<ul>
 						<li class="icon_search"><button><img class="search_logo" src="img/search_blueicon.png" alt="search_logo"/></button></li>
-						<li class="adder"><a href="more.php">+</a></li>
+						<li class="adder"><a href="#">+</a></li>
 					</ul>
 				</li>
 				<li class="searching">
@@ -113,11 +130,10 @@ $uid_already_exist = array();
 					if(!in_array((date_translate($date_from->format('l d m Y'))), $days_already_exist, true))
 					{
 					?>
-					<!--<ul <?php// if($event_date[0] == date('Y-m-d')){ echo 'class="active_day"';} ?>>-->
-					<ul class="active_day">
+					<ul <?php if($event_date[0] == date('Y-m-d')){ echo 'class="active_day"';} ?>>
 						<li>
 						 <h3 class="date"><?php echo date_translate($date_from->format('l d m Y')); ?>
-							<?php
+							<?php 
 							if($event_date[0] == date('Y-m-d'))
 							{
 							?>
@@ -140,7 +156,7 @@ $uid_already_exist = array();
 							</li>
 						   </ul>
 						  </li>
-						  <?php
+						  <?php 
 						  /*Add the day that exist to the array*/
 							if(!in_array(date_translate($date_from->format('l d m Y')), $days_already_exist, true))
 							{
@@ -181,7 +197,7 @@ $uid_already_exist = array();
 						$task_statement->bindParam(":date_task", $date_from->format('Y-m-d'));
 						$task_statement->execute();
 						$tasks = $task_statement->fetchAll(PDO::FETCH_ASSOC);
-						//var_dump($tasks);
+						var_dump($tasks);
 						?>
 						<li>
 							<div class="todo">
@@ -212,6 +228,233 @@ $uid_already_exist = array();
 					}
 				}
 			?>
+			<!--<ul class="active_day">
+				<li>
+					<h3 class="date"><?php echo $today; ?><span>(Aujourd'hui)</span></h3>
+				</li>
+				<li>
+					<ul class="planning">
+						<li class="wafel">
+							<ul>
+								<li class="clock">08:10</li>
+								<li>
+									<ul class="event">
+										<li class="rdv">Aller au Starbucks</li>
+										<li class="localisation">Gare</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="wafel">
+							<ul>
+								<li class="clock">10:40</li>
+								<li>
+									<ul class="event">
+										<li class="rdv">TP Bourgaux</li>
+										<li class="localisation">C214</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Vos tâches<span class="compteur">(<?php echo '6' ?>)</span></h3>
+						<ul>-->
+						<?php
+						foreach ($tasks as $keys=>$t){
+	?>
+						
+							<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker"><!--<span class="time"><?php //echo date('H:i', strtotime($t['hour'])); ?></span>--><?php echo $t['task']; ?><!--</label><button class="supp" data-id="<?php echo $t['id']; ?>">-</button></li>
+							<?php } ?>
+						</ul>
+						<form class="more" method="post" action="post_task.php">
+							<ul>
+								<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>-->
+			<!--<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $tomorrow; ?></h3>
+				</li>
+				<li class="disappear">
+					<table class="planning">
+					</table>
+				</li>
+				<li>
+				<div class="todo">
+					<h3>Tâches du jour :</h3>
+						<ul class="future_adjust">
+							<li><input name="futfut" type="checkbox"/><label class="todo_right" name="futfut" for="futfut">Boire du café</label><button class="supp">-</button></li>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $twodays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>09:30</td>
+							<td>Courbatures</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $threedays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>15:30</td>
+							<td>Mortal Kombat</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $fourdays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>15:30</td>
+							<td>Mortal Kombat</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $fivedays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>15:30</td>
+							<td>Destiny</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $sixdays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>17:30</td>
+							<td>Destiny</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="back_to_the_future">
+				<li>
+					<h3 class="date"><?php //echo $sevendays; ?></h3>
+				</li>
+				<li>
+					<table class="planning">
+						<tr>
+							<td>21:30</td>
+							<td>Sims</td>
+							<td class="tab_right">Domicile</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					<div class="todo">
+						<h3>Tâches du jour :</h3>
+						<ul>
+						</ul>
+						<form class="more">
+							<ul>
+								<li><input class="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+							</ul>
+						</form>
+					</div>
+				</li>
+			</ul>-->
 			</div>
 		</div>
 	</div>

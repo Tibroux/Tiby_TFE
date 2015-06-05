@@ -281,8 +281,9 @@ ol {
 }
 .active_day {
 	border: 2px solid #0076ff;
+}
+.active_day {
 	left: 0;
-	margin-bottom: 1rem;
 }
 .compte, .synchro {
 	border: 2px solid #0076ff;
@@ -401,8 +402,6 @@ td.tab_right {
 	border-left: 1px solid #0076ff;
 	padding: .3rem .5rem;
 	display: inline-block;
-	width: 71%;
-	height: auto;
 }
 .rdv {
 	font-size: .9rem;
