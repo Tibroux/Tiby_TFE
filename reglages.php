@@ -37,7 +37,7 @@ if($_POST)
 	
 	if(in_array(strtolower($username), $username_check))
 	{
-		$error = "Erreur : ce nom d'utilisateur est déjà pris";
+		$error = "Erreur : ce nom d'utilisateur est déjà utilisé";
 	}
 	
 	if(strlen($username) < 3)
@@ -47,7 +47,7 @@ if($_POST)
 	
 	if(is_valid_email($email) == false)
 	{
-		$error = "Erreur : email invalide";
+		$error = "Erreur : e-mail invalide";
 	}
 	
 	if(strlen($password)>0)
@@ -160,11 +160,12 @@ if($_POST)
 			<ul class="salo">
 				<li class="back"><a href="semaine.php"><img src="img/back_icon.png" alt="retour"/></a></li>
 				<li><h1 id="rules" class="space">Réglages</h1></li>
+				<li class="logout"><a href="logout.php"><img src="img/logout_icon.png" alt="déconnexion"></a></li>
 			</ul>
 		</header>
 		<div class="content">
 			<div class="phone">
-			<?php 
+			<?php
 				$sql= "SELECT * FROM users WHERE id=:id;";
 				$u=$dbh->prepare($sql);
 				$u->bindParam(":id",$_SESSION['user'][0]['id']);
@@ -173,7 +174,7 @@ if($_POST)
 			if(strlen($_SESSION['user'][0]['error'])>0)
 			{
 			?>
-			<p class="error"><?php 
+			<p class="error"><?php
 				echo $_SESSION['user'][0]['error'];
 				unset($_SESSION['user'][0]['error']);
 			?></p>

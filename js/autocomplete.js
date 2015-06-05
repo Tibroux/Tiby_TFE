@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	console.log("coucou");
+	//console.log("coucou");
 	var tasks = [];
 	$.post( "get_task.php", {"action" : "getTasks"}, function(data){
 		data = jQuery.parseJSON(data);

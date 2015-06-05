@@ -22,7 +22,7 @@ if($_SESSION['logged_in'] != 'ok') {
 	exit;
 }
 // date
-$today = "$day $daynum $month $year";
+//$today = "$day $daynum $month $year";
 // nom d'utilisateur
 $name= "SELECT * FROM users WHERE id=:id;";
 $u=$dbh->prepare($name);

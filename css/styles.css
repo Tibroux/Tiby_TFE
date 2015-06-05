@@ -26,12 +26,12 @@ body {
 	position: relative;
 	left: .1rem;*/
 }
-.parameter {
+.parameter, .logout {
 	width: 27%;
 	text-align: right;
 	margin-top: .55rem;
 }
-.parameter a img {
+.parameter a img, .logout a img {
 	width: 1.2rem;
 	height: 1.2rem;
 	position: relative;
@@ -909,6 +909,8 @@ h1.title_more {
 }
 #rules {
 	text-align: center;
+	position: relative;
+	left: -.45rem;
 }
 #datetask {
 	margin-top: .1rem;
