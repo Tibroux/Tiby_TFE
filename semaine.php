@@ -35,10 +35,10 @@ $usernamedb=$u->fetchAll(PDO::FETCH_ASSOC);
 $sql= "SELECT tasks.id,tasks.checked,tasks.datetask,tasks.task,tasks.user_id FROM tasks LEFT JOIN users ON users.id= tasks.user_id WHERE user_id = :tadaa";
 //echo $sql;
 
-$q =  $dbh ->prepare($sql);
+/*$q =  $dbh ->prepare($sql);
 $q -> bindParam(":tadaa",$_SESSION['user'][0]['id']);
 $q -> execute();
-$tasks = $q->fetchAll(PDO::FETCH_ASSOC);
+$tasks = $q->fetchAll(PDO::FETCH_ASSOC);*/
 //var_dump($tasks);
 //foreach ($tasks as $keys->$t) {
 	//var_dump($tasks); // Montrer les tâches
