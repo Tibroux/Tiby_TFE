@@ -2,21 +2,10 @@
 require_once('config.inc.php');
 /* require_once('trad.inc.php'); */
 require_once('function_trad_inc.php');
+require_once('get_task.php');
 
-/*
-
-$extranet = var_dump(is_dir(link('http://extranet.infographie-sup.be/ics/3TID2.ics')));
-
-if(isset($extranet));
-
-SELECT * FROM events WHERE date >=CURDATE() AND date <= "2015-05-27 00:00:00"
-
-*/
 
 // vérifier s'il est loggué
-//echo '<pre>';
-//print_r($_SESSION);
-//exit;
 if($_SESSION['logged_in'] != 'ok') {
 	header('Location: index.php');
 	exit;
@@ -202,7 +191,7 @@ $uid_already_exist = array();
 								  </ul>
 								  <form class="more" method="post" action="post_task.php">
 								   <ul>
-									<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input class="ok" type="submit" value="OK"/></li>
+									<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input id="datetask" class="disappear" name="datetask" type="text" value="<?php echo date_translate($date_from->format('Y-m-d')); ?>"/><input class="ok" type="submit" value="OK"/></li>
 								   </ul>
 								  </form>
 								 </div>
