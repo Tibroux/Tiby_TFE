@@ -72,11 +72,11 @@ $user_id = $_SESSION['user'][0]['id'];*/
 					<h3>Ajouter une tâche</h3>
 					<ol>
 						<li id="add_task" class="decal">
-						<label class="disappear" for="task">Ajouter une tâche</label>
-							<textarea id="task" class="area" name="username" placeholder="Ajouter une tâche..."></textarea>
+						<label class="disappear" for="add">Ajouter une tâche</label>
+							<textarea id="add" class="area" name="add" placeholder="Ajouter une tâche..."></textarea>
 						</li>
 						<li class="decal">
-						<label class="disappear" for="password">Date</label>
+						<label class="disappear" for="datetask">Date</label>
 						<input id="datetask" class="area" name="datetask" type="date"/>
 						</li>
 					</ol>
