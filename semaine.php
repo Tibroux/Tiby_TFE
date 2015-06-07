@@ -191,7 +191,7 @@ $uid_already_exist = array();
 								  </ul>
 								  <form class="more" method="post" action="post_task.php">
 								   <ul>
-									<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input id="datetask" class="disappear" name="datetask" type="text" value="<?php echo date_translate($date_from->format('Y-m-d')); ?>"/><input class="ok" type="submit" value="OK"/></li>
+									<li><input class="add" name="add" type="text" placeholder="Ajouter une tâche..."/><input id="datetask" class="disappear" name="datetask" type="text" value="<?php echo date_translate($date_from->format('Y-m-d')); ?>"/><input id="timetask" class="disappear" name="timetask" type="text" value="<?php echo date_translate($date_from->format('H:i:s')); ?>"/><input class="ok" type="submit" value="OK"/></li>
 								   </ul>
 								  </form>
 								 </div>
