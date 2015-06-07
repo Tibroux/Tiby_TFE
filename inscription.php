@@ -7,15 +7,11 @@ function is_valid_email($email) {
 
 $errors="";
 
-/*$password = strip_tags(trim($_POST['password']));
-md5($password);*/
-
 //form processing
 if($_POST) {
 	// nettoyage
 	$username = strip_tags(trim($_POST['username']));
 	$password = strip_tags(trim($_POST['password']));
-	$school = strip_tags(trim($_POST['school']));
 	$email = strip_tags(trim($_POST['email']));
 	$confirm_email = strip_tags(trim($_POST['confirm_email']));
 	
@@ -34,11 +30,10 @@ if($_POST) {
 	
 	if($errors == "")
 	{
-		$query = 'INSERT INTO users(username,password,school,email,confirm_email) VALUES(:username, :password, :school, :email, :confirm_email);';
+		$query = 'INSERT INTO users(username,password,email,confirm_email) VALUES(:username, :password, :email, :confirm_email);';
 			$preparedStatement = $dbh->prepare($query);
 			$preparedStatement->bindParam(":username", $username);
 			$preparedStatement->bindParam(":password", $password);
-			$preparedStatement->bindParam(":school", $school);
 			$preparedStatement->bindParam(":email", $email);
 			$preparedStatement->bindParam(":confirm_email", $confirm_email);
 			$preparedStatement->execute();
@@ -101,30 +96,7 @@ if($_POST) {
 						</li>
 					</ol>
 				</fieldset>
-				<!--<fieldset class="synchro">
-					<h3>Synchronisation</h3>
-					<ol>
-						<li id="first_decal_synchro" class="decal">
-						<input id="ical" class="synchronisor" name="ical" type="checkbox"/>
-						<label class="synchronisor" for="ical">iCal</label>
-						<label class="disappear" for="link_ical">Lien iCal</label>
-						<input id="link_ical" class="area" name="link_ical" type="url" placeholder="Lien ics, rss, ..."/>
-						</li>
-						<li class="decal">
-						<input id="googlecal" class="synchronisor" name="googlecal" type="checkbox"/>
-						<label class="synchronisor" for="googlecal">Google Calendar</label>
-						<label class="disappear" for="link_google">Lien Google Calendar</label>
-						<input id="link_google" class="area" name="link_google" type="url" placeholder="Lien ics, rss, ..."/>
-						</li>
-						<li class="decal">
-						<input id="extranet" class="synchronisor" name="extranet" type="checkbox"/>
-						<label class="synchronisor" for="extranet">Extranet Étudiant</label>
-						<label class="disappear" for="link_extranet">Lien extranet</label>
-							<input id="link_extranet" class="area" name="link_extranet" type="url" placeholder="Lien ics, rss, ..."/></li>
-						</li>
-					</ol>
-				</fieldset>-->
-				<input id="register_bottom" class="confirm_btn_bottom" name="register_bottom" type="submit" value="Confirmer"/>
+				<input id="register_bottom" class="confirm_btn_bottom" name="register_bottom" type="submit" value="S'enregistrer"/>
 			</form>
 			</div>
 		</div>
