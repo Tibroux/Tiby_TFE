@@ -437,11 +437,12 @@ td.tab_right_split {
 	width: 100%;
 }
 .todo h3 {
-	margin-left: 1rem;
-	padding: .6rem 0;
+	padding: .6rem 1rem;
 	font-weight: 100;
 	color: #8e8e93;
 	font-size: 1rem;
+	border-top: 1px solid #0076ff;
+	margin-top: -1px;
 }
 .compteur {
 	margin-left: .5rem;
@@ -847,6 +848,7 @@ li.harvey {
 	width: 100%;
 	border-bottom: 1px solid #b2b2b2;
 	border-top: 1px solid #b2b2b2;
+	background-color: rgba(210,210,210,1);
 }
 li.harvey ul {
 	width: 100%;
@@ -861,15 +863,17 @@ li.icon_search {
 li.icon_search button {
 	width: 100%;
 	height: 2rem;
-	background-color: #f8f9f9;
+	background-color: rgba(210,210,210,1);
 	border: none;
+	outline: none;
 	cursor: pointer;
 }
 li.adder {
 	width: 49%;
-	height: 2.4rem;
+	height: 2.35rem;
 	padding-top: 1px;
 	border-left: 1px solid #8e8e93;
+	background-color: #f8f9f9;
 }
 li.adder a {
 	width: 100%;
