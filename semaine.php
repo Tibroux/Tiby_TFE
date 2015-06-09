@@ -83,7 +83,7 @@ $uid_already_exist = array();
 							$months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 						
 							$id = 1;//$_SESSION["user"][0]["id"];
-							$sql = "SELECT * FROM tasks WHERE tasks.datetask>=NOW() AND tasks.user_id = $id AND tasks.checked = 0 ORDER BY tasks.datetask DESC";
+							$sql = "SELECT * FROM tasks WHERE tasks.datetask>=NOW() AND tasks.user_id = $id ORDER BY tasks.datetask DESC";
 							
 							$task = $dbh->prepare($sql);
 							//$days->bindParam(':articleid', $articleid);
@@ -140,7 +140,15 @@ $uid_already_exist = array();
 									$t2 =  date("Y m d", strtotime($r_task[$j]['datetask']));
 									if($t1 == $t2)
 									{
-										$tasks .= '<li><input name="shaker" type="checkbox"/><label class="todo_right" name="shaker" for="shaker">' . $r_task[$j]["task"] . '</label><button class="supp" data-id="' . $r_task[$j]["id"] . '">-</button></li>';
+										$task_data_id = $r_task[$j]["id"];
+										if($r_task[$j]["checked"] == 1)
+										{
+											$tasks .= '<li><input id="task'.$task_data_id.'" name="shaker" type="checkbox" checked="checked" /><label for="task'.$task_data_id.'" class="todo_right" name="shaker" for="shaker">' . $r_task[$j]["task"] . '</label><button class="supp" data-id="' . $r_task[$j]["id"] . '">-</button></li>';
+										}
+										else
+										{
+											$tasks .= '<li><input id="task'.$task_data_id.'" name="shaker" type="checkbox"/><label for="task'.$task_data_id.'" class="todo_right" name="shaker" for="shaker">' . $r_task[$j]["task"] . '</label><button class="supp" data-id="' . $r_task[$j]["id"] . '">-</button></li>';
+										}
 									}
 								}
 								
@@ -186,6 +194,6 @@ $uid_already_exist = array();
 		</div>
 	</body>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<!--<script type="text/javascript" src="js/autocomplete.js"></script>-->
+	<script type="text/javascript" src="js/autocomplete.js"></script>
 	<script type="text/javascript" src="js/func.js"></script>
 </html>

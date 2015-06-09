@@ -955,3 +955,6 @@ h1.title_more {
 	font-size: .8rem;
 	border-radius: 5px;
 }
+.ui-helper-hidden-accessible div {
+	display: none;
+}
