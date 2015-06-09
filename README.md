@@ -9,5 +9,5 @@ ESIAJ - [DWM](https://dwm.re/) 2015.
 
 * [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js)
 
-Merci à Alexandre Buruk pour m'avoir rappeler que la simplicité est souvent le meilleur chemin, Julien Bolle pour sa patience et ses explications en php et à Kevin Delval qui m'a aidé à garder les pieds sur terre et à prendre le recul nécessaire pour corriger mon UX Design.
+Merci à Alexandre Buruk pour m'avoir rappeler que la simplicité est souvent le meilleur chemin, à Julien Bolle pour sa patience et ses explications en php, à Kevin Delval qui m'a aidé à garder les pieds sur terre et à prendre le recul nécessaire pour corriger mon UX Design et Adrien Paquot pour son sauvetage sur la fin du php aussi.
 Un merci particulier à Alexandre Plennevaux pour son aide durant tout le processus de production du projet.
