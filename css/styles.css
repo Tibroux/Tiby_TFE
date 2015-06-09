@@ -70,7 +70,7 @@ header ul li {
 }
 header.phone {
 	/*margin-top: 1.4rem;*/
-	border-bottom: 1px solid #b2b2b2;
+	/*border-bottom: 1px solid #b2b2b2;*/
 }
 .phone {
 	/*width: 320px;*/
@@ -223,6 +223,7 @@ li.section_search {
 }
 .searching {
 	width: 100%;
+	display: none;
 }
 .search_logo {
 	width: 18px;

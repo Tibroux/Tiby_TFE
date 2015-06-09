@@ -1,4 +1,4 @@
 $(".desactive").click(function(){
-	$( "this" ).toggleClass( "active" );
+	$( ".desactive" ).toggleClass( "active" );
 	$( ".searching" ).toggleClass( "open" );
 });

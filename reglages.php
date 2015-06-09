@@ -153,6 +153,7 @@ if($_POST)
     <link rel="apple-touch-icon-precomposed" href="img/icon_app.png"/>
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/delete-account.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -222,7 +223,7 @@ if($_POST)
 				</fieldset>
 				<input id="confirm_bottom" class="confirm_btn_bottom" name="confirm_bottom" type="submit" value="Confirmer"/>
 			</form>
-			<button class="deleter" data-id="<?php echo $user[0]['id']; ?>">Supprimer le compte</button>
+			<button id="delete-account" class="deleter">Supprimer le compte</button>
 			</div>
 		</div>
 	</div>

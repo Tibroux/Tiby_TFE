@@ -1,4 +1,5 @@
-$(document).ready(function(){
+$(document).ready(function()
+{
 	var tasks = [];
 	var dateAlreadyExist =[];
 	var today = new Date();
@@ -12,8 +13,12 @@ $(document).ready(function(){
 		console.log(dateAlreadyExist);
 	}
 	
-	$.post( "get_task.php", {"action" : "getTasks", "userId" : dataT}, function(data){
+	$.post(
+		"get_task.php", {"action" : "getTasks", "userId" : dataT}, function(data)
+		{
 		data = jQuery.parseJSON(data);
+		
+		console.log(data);
 		for(var i=0; i < data.task.length; i++)
 		{
 			tasks.push(data.task[i].task);
@@ -278,7 +283,8 @@ $(document).ready(function(){
 		countTasks();
 	});
 	
-		$("#search").autocomplete({
+	$("#search").autocomplete(
+	{
         source: tasks,
         minLength: 2,
 		select : function(event, ui){
