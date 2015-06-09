@@ -157,7 +157,8 @@ $uid_already_exist = array();
 									echo '<ul class="active_day">
 										<li>
 											<h3 class="date">
-												<span class="date">' . date("d", strtotime($date_array[$i])) . ' ' . $months[intval(date("m", strtotime($date_array[$i])))] . '</span>
+											' . date("d", strtotime($date_array[$i])) . ' ' . $months[intval(date("m", strtotime($date_array[$i])))] . ' ' . date("Y", strtotime($date_array[$i])) . '
+												<span class="date"></span>
 											</h3>
 										</li>
 										<li>
