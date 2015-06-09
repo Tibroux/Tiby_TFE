@@ -71,7 +71,7 @@ $uid_already_exist = array();
 			<ul class="closer">
 				<li class="harvey">
 					<ul>
-						<li class="icon_search"><button><img class="search_logo" src="img/search_blueicon.png" alt="search_logo"/></button></li>
+						<li class="icon_search"><button class="desactive"><img class="search_logo" src="img/search_blueicon.png" alt="search_logo"/></button></li>
 						<li class="adder"><a href="more.php">+</a></li>
 					</ul>
 				</li>
@@ -207,4 +207,5 @@ $uid_already_exist = array();
 </body>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/autocomplete.js"></script>
+<script type="text/javascript" src="js/func.js"></script>
 </html>

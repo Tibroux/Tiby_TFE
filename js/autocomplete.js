@@ -7,7 +7,9 @@ $(document).ready(function(){
 	var months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 	for(var i=0; i<$('.phone>ul.active_day').length; i++)
 	{
-		dateAlreadyExist.push(new Date($('.phone >ul.active_day').eq(i).attr('data-id')+" 23:59:59"));
+		/* dateAlreadyExist.push(new Date(($('.phone >ul.active_day').eq(i).attr('data-id'))+" 23:59:59")); */
+		dateAlreadyExist.push(new Date(($('.phone >ul.active_day').eq(i).attr('data-id'))));
+		console.log(dateAlreadyExist);
 	}
 	
 	$.post( "get_task.php", {"action" : "getTasks", "userId" : dataT}, function(data){
@@ -33,16 +35,18 @@ $(document).ready(function(){
 			else
 			{
 				if(new Date(data.task[i].datetask) > today)
+				//if(closest < new Date(dateAlreadyExist[d]))
 				{
 					for(var d=0; d<dateAlreadyExist.length; d++)
 					{
-						if(new Date(data.task[i].datetask) < new Date(dateAlreadyExist[d]))
+						if(new Date(data.task[i].datetask) < dateAlreadyExist[d])
 						/* if(new Date(data.task[i].datetask) < new Date(closest)) */
 						{
-							if(closest > new Date(dateAlreadyExist[d]))
+							if(closest > dateAlreadyExist[d])
 							{
-								closest = new Date(dateAlreadyExist[d]);
-								if((closest.getMonth()+1).toString().length<2)
+								closest = dateAlreadyExist[d];
+								//if((closest.getMonth()+1).toString().length<2)
+								if(closest < dateAlreadyExist[d])
 								{
 									var sqldate = closest.getFullYear()+"-0"+(closest.getMonth()+1)+"-"+closest.getDate();
 								}
@@ -86,11 +90,14 @@ $(document).ready(function(){
 										</li>\
 									</ul>\
 								').insertBefore('.phone ul[data-id='+sqldate+']');
-								/* dateAlreadyExist.push(new Date(data.task[i].datetask)); */
+								/* dateAlreadyExist.push(new Date(data.task[i].datetask)+" 23:59:59"); */
+								dateAlreadyExist.splice(i, 0, new Date(data.task[i].datetask));
+								/* J'ai supprimé le insertBefore, ça supprime rien. J'ai remis le dateAlreadyExist, pareil...*//*Si j'ajoute .content devant le .phone, rien ne change non plus*/
 							}
 							else
 							{
-								if((closest.getMonth()+1).toString().length<2)
+								//if((closest.getMonth()+1).toString().length<2)
+								if(closest < dateAlreadyExist[d])
 								{
 									var sqldate = closest.getFullYear()+"-0"+(closest.getMonth()+1)+"-"+closest.getDate();
 								}
@@ -133,12 +140,17 @@ $(document).ready(function(){
 											</div>\
 										</li>\
 									</ul>\
-								').insertBefore('.phone ul[data-id='+sqldate+']');
+								').insertBefore('.phone ul[data-id='+sqldate+']'); 
+								/* dateAlreadyExist.push(new Date(data.task[i].datetask)+" 23:59:59"); */
+								dateAlreadyExist.splice(i, 0, new Date(data.task[i].datetask));
+								/* J'ai supprimé ça, ça supprime le doublon sur aujourd mais aussi la 2eme task de aujourd et tout mercredi...*/
+								//.appendTo('.content .phone ul[data-id='+sqldate+']'); /*ça, ça a créé une catastrophe avec des lundi et mercredi dans le jeudi...*/
+								//.appendTo('.content .phone'); /*et ça arrange pas grand chose non plus...*/
 							}
 						}
 						else
 						{
-							if(closest < new Date(dateAlreadyExist[d]))
+							if(closest < dateAlreadyExist[d]) /*Si je supprime ce if, même le samedi se dédouble... P-e que ça peut être réutilisé pour mercredi et lundi, même en trichant...*/
 							{
 								var dateOfTask = new Date(data.task[i].datetask);
 								if(today.getFullYear() == dateOfTask.getFullYear() && today.getMonth() == dateOfTask.getMonth() && today.getDate() == dateOfTask.getDate())
@@ -260,7 +272,6 @@ $(document).ready(function(){
 							}
 						} */
 					}
-					console.log("Pour "+data.task[i].datetask+" -> "+closest);
 				}
 			}
 		}

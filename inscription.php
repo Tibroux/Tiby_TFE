@@ -37,7 +37,48 @@ if($_POST) {
 			$preparedStatement->bindParam(":email", $email);
 			$preparedStatement->bindParam(":confirm_email", $confirm_email);
 			$preparedStatement->execute();
-			header("Location: semaine.php");
+			
+			
+			/* $mail = 'tibyoctet@gmail.com'; */ // Déclaration de l'adresse de destination.
+			$mail = $email;
+
+			$passage_ligne = "\n";
+
+			//Déclaration des messages au format texte et au format HTML.
+			$message_txt = "Bonjour $username, \n \n Voici vos informations enregistrées lors de votre inscription, nous vous conseillons de garder cet e-mail en cas d'oubli : \n Nom d'utilisateur : $username \n Mot de passe : $password \n \n Nous vous remercions de votre inscription et espérons que vous apprécierez YETI autant que nous. \n Bien à vous, \n Le Yéti.";
+			$message_html = "<html><head></head><body><h4>Bonjour $username,</h4><br/><p>Voici vos informations enregistrées lors de votre inscription, nous vous conseillons de garder cet e-mail en cas d'oubli :</p><p>Nom d'utilisateur :<b> $username</b><br/>Mot de passe :<b> $password</b></p><p>Nous vous remercions de votre inscription et espérons que vous apprécierez YETI autant que nous.</p><p>Bien à vous,</p><p>Le Yéti.</p></body></html>";
+			 
+			//Création de la boundary
+			$boundary = "-----=".md5(rand());
+			 
+			//Définition du sujet.
+			$sujet = "Bienvenue sur YETI !";
+			 
+			//Création du header de l'e-mail.
+			$header = "From: \"Yeti-app\"<tibyoctet@gmail.com>".$passage_ligne;
+			$header.= "Reply-to: \"Yeti-app\" <tibyoctet@gmail.com>".$passage_ligne;
+			$header.= "MIME-Version: 1.0".$passage_ligne;
+			$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+			 
+			//Création du message.
+			$message = $passage_ligne."--".$boundary.$passage_ligne;
+			//Ajout du message au format texte.
+			$message.= "Content-Type: text/plain; charset=\"UTF-8\"".$passage_ligne;
+			$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+			$message.= $passage_ligne.$message_txt.$passage_ligne;
+
+			$message.= $passage_ligne."--".$boundary.$passage_ligne;
+			//Ajout du message au format HTML
+			$message.= "Content-Type: text/html; charset=\"UTF-8\"".$passage_ligne;
+			$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+			$message.= $passage_ligne.$message_html.$passage_ligne;
+
+			$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+			$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+			 
+			//Envoi e-mail
+			mail($mail,$sujet,$message,$header);
+			header('Location:index.php');
 	}
 	else{
 		die($errors);
